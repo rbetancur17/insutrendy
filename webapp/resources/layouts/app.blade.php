@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Divisima | eCommerce Template</title>
+	<title>Insutrendy</title>
 	<meta charset="UTF-8">
 	<meta name="description" content=" Divisima | eCommerce Template">
 	<meta name="keywords" content="divisima, eCommerce, creative, html">
@@ -18,10 +18,10 @@
 	<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}"/>
 	<link rel="stylesheet" href="{{ asset('css/flaticon.css') }}"/>
 	<link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}"/>
-	<link rel="stylesheet" href="css/jquery-ui.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
-	<link rel="stylesheet" href="css/animate.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/animate.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
 
 
 	<!--[if lt IE 9]>
