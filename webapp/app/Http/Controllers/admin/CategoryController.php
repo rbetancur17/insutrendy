@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Categorie;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -35,7 +36,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $categorie = new Categorie();
+        $categorie->code = $request->input('code');
+        $categorie->name = $request->input('name');
+        $categorie->description = $request->input('description');
+        $categorie->save();
+        //return redirect('category');
+        return redirect()->back()->with('message', 'Categoría almacenada con éxito');
     }
 
     /**

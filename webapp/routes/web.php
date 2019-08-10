@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('welcome','admin\Dashboard@index')->name('welcome');
+
 Route::get('dashboard','admin\Dashboard@index')->name('homeAdmin');
 
 Route::get('category','admin\CategoryController@index')->name('adminCategory');
+
+Route::post('categorycreate','admin\CategoryController@store')->name('categorycreate');
