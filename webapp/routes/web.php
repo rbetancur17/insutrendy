@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('dashboard','admin\Dashboard@index')->name('homeAdmin');
+
+Route::get('category','admin\CategoryController@index')->name('adminCategory');
