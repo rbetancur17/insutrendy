@@ -20,5 +20,6 @@ Route::get('welcome','admin\Dashboard@index')->name('welcome');
 Route::get('dashboard','admin\Dashboard@index')->name('homeAdmin');
 
 Route::get('category','admin\CategoryController@index')->name('adminCategory');
+Route::get('product','admin\ProductController@index')->name('adminProduct');
 
 Route::post('categorycreate','admin\CategoryController@store')->name('categorycreate');

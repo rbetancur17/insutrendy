@@ -12,4 +12,11 @@ class Categorie extends Model
     protected $fillable = ['name','code','description'];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
+    public static function select(){
+        Categorie::get()->map(function($item) use (&$data){
+            $data[$item->id] = $item->name;
+        });
+        return $data;
+    }
+
 }

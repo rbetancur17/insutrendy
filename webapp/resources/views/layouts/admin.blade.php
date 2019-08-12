@@ -46,12 +46,12 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="{{ route('adminProduct') }}">
               <i class="material-icons">image_search</i>
               <p>Productos</p>
             </a>
           </li>
-         
+
         </ul>
       </div>
     </div>
