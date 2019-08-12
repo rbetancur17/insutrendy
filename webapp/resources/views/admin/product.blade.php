@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-xl-12">
-                <form action="{{route('categorycreate')}}" method="post">
+                <form action="{{route('productcreate')}}" method="post">
                     {{ csrf_field() }}
                     <div class="card">
                             <div class="card-header card-header-primary">
@@ -38,13 +38,20 @@
                                             <input type="text" name="price" class="form-control">
                                           </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-2">
                                           <div class="form-group">
-                                            <label class="bmd-label-floating">Categoría</label>
-                                            {{Form::select('id_categorie', \App\Categorie::select(), null,
-                                                ['class'=>'form-control form-control-lg','id' =>'id_categorie',
-                                                'name'=>'id_categorie', "data-validate" => "required"])}}                                          </div>
+                                            <label class="bmd-label-floating">Categoría:</label>
+                                          </div>
                                         </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                           <select name="categorie_id"  class="form-control">
+                                                @foreach($categories as $category)
+                                                  <option value="{{ $category->id_categorie }}">{{$category->name}}</option>
+                                                @endforeach
+                                            </select>                                            
+                                          </div>
+                                        </div>                                        
                                 </div>
 
                                 <div class="row">

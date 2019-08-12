@@ -23,3 +23,5 @@ Route::get('category','admin\CategoryController@index')->name('adminCategory');
 Route::get('product','admin\ProductController@index')->name('adminProduct');
 
 Route::post('categorycreate','admin\CategoryController@store')->name('categorycreate');
+
+Route::post('productcreate','admin\ProductController@store')->name('productcreate');

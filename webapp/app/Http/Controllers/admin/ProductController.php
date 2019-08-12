@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Product;
+use App\Categorie;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('admin.product');
+        $categories = Categorie::all();
+        return view('admin.product', compact('categories') );
     }
 
     /**
@@ -36,7 +38,15 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $product = new Product();
+        $product->code = $request->input('code');
+        $product->name = $request->input('name');
+        $product->price = $request->input('price');
+        $product->id_categorie = $request->input('categorie_id');
+        $product->description = $request->input('description');
+        $product->save();
+        return redirect()->back()->with('message', 'Producto almacenada con éxito');
     }
 
     /**
@@ -83,4 +93,6 @@ class ProductController extends Controller
     {
         //
     }
+
+
 }
