@@ -9,7 +9,7 @@ class Categorie extends Model
 {
     use SoftDeletes;
     protected $table = "insutrendy.categories";
-    protected $fillable = ['name','code','description'];
+    protected $fillable = ['name','code','description','status'];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public static function select(){
