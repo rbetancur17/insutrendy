@@ -3,6 +3,7 @@
 @extends('layouts.apph')
 @section('content')
     <br>
+    <h2 class="text-center">Productos Destacados</h2>
     <div class="container">
         {{-- aca iria el foreach --}}
         <div class="row">
