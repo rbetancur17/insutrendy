@@ -45,7 +45,7 @@
 				<div class="row">
 					<div class="col-lg-2 text-center text-lg-left">
 						<!-- logo -->
-						<a href="./index.html" class="site-logo">
+						<a href="{{ route('inicio') }}" class="site-logo">
 							<img src="{{ asset('img/insutrendy.jpg') }}" alt="">
 						</a>
 					</div>
@@ -79,7 +79,7 @@
 			<div class="container">
 				<!-- menu -->
 				<ul class="main-menu">
-					<li><a href="#">Inicio</a></li>
+					<li><a href="{{ route('inicio') }}">Inicio</a></li>
 					<li><a href="#">Sobre Nosotros</a></li>
 					<li><a href="#">Zapatos y Bolsos</a>
 						<ul class="sub-menu">
@@ -99,7 +99,7 @@
 							<li><a href="#">Telas</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Pages</a>
+{{-- 					<li><a href="#">Pages</a>
 						<ul class="sub-menu">
 							<li><a href="./product.html">Product Page</a></li>
 							<li><a href="./category.html">Category Page</a></li>
@@ -107,9 +107,9 @@
 							<li><a href="./checkout.html">Checkout Page</a></li>
 							<li><a href="./contact.html">Contact Page</a></li>
 						</ul>
-					</li>
+					</li> --}}
                     <li><a href="#">Blog</a></li>
-                    <li><a href="./contact.html">Contacto</a></li>
+                    <li><a href="{{ route('contacto') }}">Contacto</a></li>
 				</ul>
 			</div>
 		</nav>

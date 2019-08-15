@@ -16,10 +16,14 @@ Route::get('/', function () {
 });
 
 
+Route::get('home','HomeController@index')->name('inicio');
+
 
 // Productos
 Route::get('detailProduct', 'DetalleProducto@index')->name('productDetail');
 Route::get('Productquotation','CotizacionProducto@index')->name('quotation');
+
+Route::get('contact','Contacto@index')->name('contacto');
 
 
 
