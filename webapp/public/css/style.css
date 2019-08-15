@@ -414,7 +414,7 @@ ol {
 }
 
 .main-navbar {
-	background: #282828;
+	background: #f09307;
 }
 
 .slicknav_menu {
@@ -433,7 +433,7 @@ ol {
 .main-menu li a {
 	display: inline-block;
 	font-size: 16px;
-	color: #ffffff;
+	color: #000000;
 	margin-right: 50px;
 	line-height: 1;
 	padding: 17px 0;
@@ -513,7 +513,7 @@ ol {
 
 .hero-slider .hs-item {
 	position: relative;
-	height: 720px;
+	height: 450px;
 }
 
 .hero-slider .hs-item span {

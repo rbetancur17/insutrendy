@@ -10,16 +10,11 @@
 						<div class="col-xl-6 col-lg-7 text-white">
 							<span>New Arrivals</span>
 							<h2>denim jackets</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-							<a href="#" class="site-btn sb-line">DISCOVER</a>
-							<a href="#" class="site-btn sb-white">ADD TO CART</a>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+
 						</div>
 					</div>
-					<div class="offer-card text-white">
-						<span>from</span>
-						<h2>$29</h2>
-						<p>SHOP NOW</p>
-					</div>
+
 				</div>
 			</div>
 			<div class="hs-item set-bg" data-setbg="img/bg-2.jpg">
@@ -28,16 +23,11 @@
 						<div class="col-xl-6 col-lg-7 text-white">
 							<span>New Arrivals</span>
 							<h2>denim jackets</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-							<a href="#" class="site-btn sb-line">DISCOVER</a>
-							<a href="#" class="site-btn sb-white">ADD TO CART</a>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+		
 						</div>
 					</div>
-					<div class="offer-card text-white">
-						<span>from</span>
-						<h2>$29</h2>
-						<p>SHOP NOW</p>
-					</div>
+
 				</div>
 			</div>
 		</div>
@@ -81,20 +71,26 @@
     <div class="container">
         {{-- aca iria el foreach --}}
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-4 col-xl-4">
+            <div class="col-12 col-sm-12 col-md-3 col-xl-3">
                 <img src="{{ asset('img/product/boton2.jpg') }}" alt="Insutrendy" class="featured-products">
+                <span><p>Boton
+                    <br>Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis feugiat.Suspendisse eu erat quam.</p></span>
+                <a href="{{ route('productDetail') }}" class="btn btn-success">Solicitar Información</a>
+            </div>
+            <div class="col-12 col-sm-12 col-md-3 col-xl-3">
+                <img src="{{ asset('img/product/boton1.jpg') }}" alt="Insutrendy" class="featured-products">
                 <span><p>Boton</p></span>
                 <a href="{{ route('productDetail') }}" class="btn btn-success">Solicitar Información</a>
             </div>
-            <div class="col-12 col-sm-12 col-md-4 col-xl-4">
-                <img src="{{ asset('img/product/boton1.jpg') }}" alt="Insutrendy" class="featured-products">
-                <span><p>Boton</p></span>
-                <button class="btn btn-success">Solicitar Información</button>
-            </div>
-            <div class="col-12 col-sm-12 col-md-4 col-xl-4">
+            <div class="col-12 col-sm-12 col-md-3 col-xl-3">
                 <img src="{{ asset('img/product/boton3.jpg') }}" alt="Insutrendy" class="featured-products">
                 <span><p>Boton</p></span>
-                <button class="btn btn-success">Solicitar Información</button>
+                <a href="{{ route('productDetail') }}" class="btn btn-success">Solicitar Información</a>
+            </div>
+            <div class="col-12 col-sm-12 col-md-3 col-xl-3">
+                    <img src="{{ asset('img/product/boton3.jpg') }}" alt="Insutrendy" class="featured-products">
+                    <span><p>Boton</p></span>
+                    <a href="{{ route('productDetail') }}" class="btn btn-success">Solicitar Información</a>
             </div>
         </div>
     </div>

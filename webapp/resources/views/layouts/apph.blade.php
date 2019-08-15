@@ -52,16 +52,16 @@
 					<div class="col-xl-6 col-lg-5">
                         <br><br>
 						<form class="header-search-form">
-							<input type="text" placeholder="Busca en Insutrendy ....">
-							<button><i class="flaticon-search"></i></button>
+							<input type="text" placeholder="Busca en Insutrendy ...." style="border:0.2em solid #f09307">
+							<button><i class="flaticon-search" style="color: #f09307"></i></button>
 						</form>
 					</div>
 					<div class="col-xl-4 col-lg-5">
                         <br><br>
 						<div class="user-panel">
 							<div class="up-item">
-								<i class="flaticon-profile"></i>
-								<a href="#">Ingresa</a> o <a href="#">Crea una Cuenta</a>
+								<i class="flaticon-profile" style="color:#f09307"></i>
+								<a href="#" style="color:#f09307">Ingresa</a> o <a href="#" style="color:#f09307">Crea una Cuenta</a>
 							</div>
 							{{-- <div class="up-item">
 								<div class="shopping-card">
