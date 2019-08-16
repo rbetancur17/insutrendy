@@ -2,6 +2,22 @@
 @extends('layouts.apph')
 @section('content')
 
+
+	<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5d56054177aa790be32f1e4a/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+
 <div class="page-top-info">
 		<div class="container">
 			<h4>Detalle de Producto</h4>
@@ -79,7 +95,7 @@
 						<p>Cantidad</p>
                         <div class="pro-qty"><input type="text" value="1"></div>
                     </div>
-					<a href="{{ route('quotation') }}" class="site-btn">Cotizar</a>
+					<a href="{{ route('quotation') }}" class="btn btn-warning btn-lg">Cotizar</a>
 					<div id="accordion" class="accordion-area">
 						<div class="panel">
 							<div class="panel-header" id="headingOne">
