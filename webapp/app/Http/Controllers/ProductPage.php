@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
-use App\Categorie;
 
-class HomeController extends Controller
+class ProductPage extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        $products = Product::all();
-        $categorie = Categorie::all();
-        return view('welcome', compact('products','categorie') );
+        return view('productPage');
     }
 
     /**
