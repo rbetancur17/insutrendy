@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
+use App\Categorie;
+use App\SubCategorie;
+use Mail;
+
 
 class CotizacionProducto extends Controller
 {
@@ -34,7 +39,23 @@ class CotizacionProducto extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = Product::where('id_product',$request->input('id_product'))->get();
+        $categorie = Categorie::all(); 
+        $subcategorie = SubCategorie::all(); 
+        $nombreCliente = $request->input('nombre');
+        $emailCliente = $request->input('email');
+        $movilCliente = $request->input('movil');
+        $cantidad = $request->input('cantidad');
+        try{
+            Mail::send('emails.quotation', compact('product','nombreCliente','emailCliente','movilCliente','cantidad'), function($mail) use($product,$nombreCliente,$emailCliente,$movilCliente,$cantidad){
+                $mail->subject("Cotización de producto ");
+                $mail->to("stiven.betancur@gmail.com");
+                $mail->from( "director@insutrendy","Insutrendy" );
+            });
+        } catch (Exception $e) {}
+
+        return redirect()->back()->with('message', 'Cotización enviada con éxito');
+
     }
 
     /**
@@ -45,7 +66,10 @@ class CotizacionProducto extends Controller
      */
     public function show($id)
     {
-        //
+        $products = Product::where('id_product',$id)->get();
+        $categorie = Categorie::all(); 
+        $subcategorie = SubCategorie::all(); 
+        return view('cotizacion',compact('products','categorie','subcategorie') );
     }
 
     /**

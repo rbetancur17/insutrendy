@@ -13,108 +13,70 @@
 	<!-- Page info end -->
 
 	<!-- cart section end -->
-	<section class="cart-section spad">
-			<div class="container">
-					<div class="row">
-						<div class="col-lg-8">
-							<div class="cart-table">
-								<h3>Tus Datos Personales</h3>
-								<form class="contact-form">
-										<input type="text" name="" placeholder="Nombre" style="border: solid 0.1em #000;">
-										<input type="text" name="" placeholder="Email" style="border: solid 0.1em #000;">
-										<input type="text" name="" placeholder="Movil" style="border: solid 0.1em #000;">
-										
-								</form>
+    <form action="{{route('sendquotation')}}" method="post" class="contact-form">
+    {{ csrf_field() }}			
+
+
+		<div class="container">
+
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="cart-table">
+							<h3>Tus Datos Personales</h3>
+									<input type="text" name="nombre" placeholder="Nombre" style="border: solid 0.1em #000;">
+									<input type="text" name="email" placeholder="Email" style="border: solid 0.1em #000;">
+									<input type="text" name="movil" placeholder="Movil" style="border: solid 0.1em #000;">
+						</div>
+					</div>
+				</div>
+				</br>
+
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="cart-table">
+							<h3>Tus Productos a Cotizar</h3>
+							<div class="cart-table-warp">
+								<table>
+								<thead>
+									<tr>
+										<th class="product-th">Producto</th>
+										<th class="quy-th">Cantidad</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach($products as $prod)
+									<tr>
+										<input type="hidden" value="{{$prod->id_product}}" name="id_product">
+										<td class="product-col">
+											<img src="img/product/boton1.jpg" alt="">
+											<div class="pc-title">
+												<h4>{{$prod->name}}</h4>
+												<p>{{number_format($prod->price)}}</p>
+											</div>
+										</td>
+										<td class="quy-col">
+											<div class="quantity">
+						                        <div class="pro-qty">
+													<input type="text" value="1" name="cantidad">
+												</div>
+	                    					</div>
+										</td>
+									</tr>
+									@endforeach
+								</tbody>
+							</table>
 							</div>
 						</div>
 					</div>
-				</div>
-				<br>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="cart-table">
-						<h3>Tus Productos a Cotizar</h3>
-						<div class="cart-table-warp">
-							<table>
-							<thead>
-								<tr>
-									<th class="product-th">Producto</th>
-									<th class="quy-th">Cantidad</th>
-									<th class="size-th">Tamaño</th>
-									<th class="total-th">Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="product-col">
-										<img src="img/product/boton1.jpg" alt="">
-										<div class="pc-title">
-											<h4>Botón 1</h4>
-											<p>$00.00</p>
-										</div>
-									</td>
-									<td class="quy-col">
-										<div class="quantity">
-					                        <div class="pro-qty">
-												<input type="text" value="1">
-											</div>
-                    					</div>
-									</td>
-									<td class="size-col"><h4>Size M</h4></td>
-									<td class="total-col"><h4>$00.00</h4></td>
-								</tr>
-								<tr>
-									<td class="product-col">
-										<img src="img/product/boton2.jpg" alt="">
-										<div class="pc-title">
-											<h4>Botón 2</h4>
-											<p>$00.00</p>
-										</div>
-									</td>
-									<td class="quy-col">
-										<div class="quantity">
-					                        <div class="pro-qty">
-												<input type="text" value="1">
-											</div>
-                    					</div>
-									</td>
-									<td class="size-col"><h4>Size M</h4></td>
-									<td class="total-col"><h4>$00.00</h4></td>
-								</tr>
-								<tr>
-									<td class="product-col">
-										<img src="img/product/boton3.jpg" alt="">
-										<div class="pc-title">
-											<h4>Botón 3</h4>
-											<p>$00.00</p>
-										</div>
-									</td>
-									<td class="quy-col">
-										<div class="quantity">
-					                        <div class="pro-qty">
-												<input type="text" value="1">
-											</div>
-                    					</div>
-									</td>
-									<td class="size-col"><h4>Size M</h4></td>
-									<td class="total-col"><h4>$00.00</h4></td>
-								</tr>
-							</tbody>
-						</table>
-						</div>
-						<div class="total-cost">
-							<h6>Total <span>$00.90</span></h6>
-						</div>
+					<div class="col-lg-4 card-right">
+						<button type="submit" class="btn btn-warning btn-lg">Enviar Cotización</button>
+						<br><br>
+						<a href="{{route('home')}}" class="btn btn-dark btn-lg">Continuar Navegando</a>
 					</div>
 				</div>
-				<div class="col-lg-4 card-right">
-					<a href="" class="btn btn-warning btn-lg">Enviar Cotización &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-					<br><br>
-					<a href="" class="btn btn-dark btn-lg">Continuar Navegando</a>
-				</div>
-			</div>
 		</div>
-	</section>
+	</br>
+	</form>	
+</section>
 
 @endsection

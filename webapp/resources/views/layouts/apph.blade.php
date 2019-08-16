@@ -61,7 +61,7 @@
 						<div class="user-panel">
 							<div class="up-item">
 								<i class="flaticon-profile" style="color:#ffc107"></i>
-								<a href="#" style="color:#ffc107">Ingresa</a> o <a href="#" style="color:#ffc107">Crea una Cuenta</a>
+								<a href="#" style="color:#ffc107">Ingresa</a>
 							</div>
 							{{-- <div class="up-item">
 								<div class="shopping-card">

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
+use App\Categorie;
+use App\SubCategorie;
 
 class DetalleProducto extends Controller
 {
@@ -45,7 +48,10 @@ class DetalleProducto extends Controller
      */
     public function show($id)
     {
-        //
+        $products = Product::where('id_product',$id)->get();
+        $categorie = Categorie::all(); 
+        $subcategorie = SubCategorie::all(); 
+        return view('detalleProducto',compact('products','categorie','subcategorie') );
     }
 
     /**

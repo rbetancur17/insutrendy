@@ -20,8 +20,9 @@ Route::get('home','HomeController@index')->name('home');
 Route::get('productPage/{idcategorie}','ProductPage@show')->name('pageproducts');
 
 // Productos
-Route::get('detailProduct/{idproduct}', 'DetalleProducto@index')->name('productDetail');
-Route::get('Productquotation','CotizacionProducto@index')->name('quotation');
+Route::get('detailProduct/{idproduct}', 'DetalleProducto@show')->name('productDetail');
+Route::get('Productquotation/{idproduct}','CotizacionProducto@show')->name('quotation');
+Route::post('sendquotation','CotizacionProducto@store')->name('sendquotation');
 
 Route::get('contact','Contacto@index')->name('contacto');
 
