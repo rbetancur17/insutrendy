@@ -69,29 +69,15 @@
     <h2 class="text-center">Productos Destacados</h2>
     <hr class="w-75">
     <div class="container">
-        {{-- aca iria el foreach --}}
         <div class="row">
+            @foreach($products as $prod)
             <div class="col-12 col-sm-12 col-md-3 col-xl-3">
                 <img src="{{ asset('img/product/boton2.jpg') }}" alt="Insutrendy" class="featured-products">
-                <span><p>Boton
-                    <br>Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis feugiat.Suspendisse eu erat quam.</p></span>
+                <span><p>{{$prod->code}}
+                    <br>{{$prod->name}}</p></span>
                 <a href="{{ route('productDetail') }}" class="btn btn-warning">Solicitar Información</a>
             </div>
-            <div class="col-12 col-sm-12 col-md-3 col-xl-3">
-                <img src="{{ asset('img/product/boton1.jpg') }}" alt="Insutrendy" class="featured-products">
-                <span><p>Boton</p></span>
-                <a href="{{ route('productDetail') }}" class="btn btn-warning">Solicitar Información</a>
-            </div>
-            <div class="col-12 col-sm-12 col-md-3 col-xl-3">
-                <img src="{{ asset('img/product/boton3.jpg') }}" alt="Insutrendy" class="featured-products">
-                <span><p>Boton</p></span>
-                <a href="{{ route('productDetail') }}" class="btn btn-warning">Solicitar Información</a>
-            </div>
-            <div class="col-12 col-sm-12 col-md-3 col-xl-3">
-                    <img src="{{ asset('img/product/boton3.jpg') }}" alt="Insutrendy" class="featured-products">
-                    <span><p>Boton</p></span>
-                    <a href="{{ route('productDetail') }}" class="btn btn-warning">Solicitar Información</a>
-            </div>
+             @endforeach
         </div>
     </div>
     <br>

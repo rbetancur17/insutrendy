@@ -45,7 +45,7 @@
 				<div class="row">
 					<div class="col-lg-2 text-center text-lg-left">
 						<!-- logo -->
-						<a href="{{ route('inicio') }}" class="site-logo">
+						<a href="{{ route('home') }}" class="site-logo">
 							<img src="{{ asset('img/logoNew.png') }}" alt="">
 						</a>
 					</div>
@@ -79,7 +79,7 @@
 			<div class="container">
 				<!-- menu -->
 				<ul class="main-menu">
-					<li><a href="{{ route('inicio') }}">Inicio</a></li>
+					<li><a href="{{ route('home') }}">Inicio</a></li>
 					<li><a href="#">Sobre Nosotros</a></li>
 					<li><a href="#">Zapatos y Bolsos</a>
 						<ul class="sub-menu">

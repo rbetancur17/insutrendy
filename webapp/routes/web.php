@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('home','HomeController@index')->name('inicio');
+Route::get('home','HomeController@index')->name('home');
 
 
 // Productos
@@ -28,7 +28,7 @@ Route::get('contact','Contacto@index')->name('contacto');
 
 
 // admin
-Route::get('welcome','admin\Dashboard@index')->name('welcome');
+Route::get('welcome','HomeController@index')->name('welcome');
 Route::get('dashboard','admin\Dashboard@index')->name('homeAdmin');
 Route::get('category','admin\CategoryController@index')->name('adminCategory');
 Route::get('product','admin\ProductController@index')->name('adminProduct');
