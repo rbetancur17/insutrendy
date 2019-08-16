@@ -12,10 +12,6 @@
 	</div>
 	<!-- Page info end -->
 
-	<section class="cart-section spad">
-		
-	</section>
-
 	<!-- cart section end -->
 	<section class="cart-section spad">
 			<div class="container">

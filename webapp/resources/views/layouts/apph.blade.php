@@ -81,7 +81,7 @@
 				<ul class="main-menu">
 					<li><a href="{{ route('home') }}">Inicio</a></li>
 					<li><a href="#">Sobre Nosotros</a></li>
-					<li><a href="#">Zapatos y Bolsos</a>
+					<li><a href="{{ route('pageproducts') }}">Zapatos y Bolsos</a>
 						<ul class="sub-menu">
 							<li><a href="#">Suelas</a></li>
 							<li><a href="#">Accesorios</a></li>
