@@ -51,6 +51,12 @@
             </a>
           </li>
           <li class="nav-item ">
+            <a class="nav-link" href="{{ route('adminSubCategory') }}">
+              <i class="material-icons">filter</i>
+              <p>SubCategorias</p>
+            </a>
+          </li>          
+          <li class="nav-item ">
             <a class="nav-link" href="{{ route('adminProduct') }}">
               <i class="material-icons">image_search</i>
               <p>Productos</p>

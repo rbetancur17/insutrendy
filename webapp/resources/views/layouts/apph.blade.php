@@ -81,33 +81,19 @@
 				<ul class="main-menu">
 					<li><a href="{{ route('home') }}">Inicio</a></li>
 					<li><a href="#">Sobre Nosotros</a></li>
-					<li><a href="#">Zapatos y Bolsos</a>
-						<ul class="sub-menu">
-							<li><a href="#">Suelas</a></li>
-							<li><a href="#">Accesorios</a></li>
-							<li><a href="#">Herrajes</a></li>
-							<li><a href="#">Producto Terminado</a></li>
-							<li><a href="#">Telas</a></li>
-						</ul>
-                    </li>
-                    <li><a href="#">Vestuario</a>
-						<ul class="sub-menu">
-                            <li><a href="#">Aplicaciones</a></li>
-							<li><a href="#">Accesorios</a></li>
-							<li><a href="#">Herrajes</a></li>
-							<li><a href="#">Producto Terminado</a></li>
-							<li><a href="#">Telas</a></li>
-						</ul>
-					</li>
-{{-- 					<li><a href="#">Pages</a>
-						<ul class="sub-menu">
-							<li><a href="./product.html">Product Page</a></li>
-							<li><a href="./category.html">Category Page</a></li>
-							<li><a href="./cart.html">Cart Page</a></li>
-							<li><a href="./checkout.html">Checkout Page</a></li>
-							<li><a href="./contact.html">Contact Page</a></li>
-						</ul>
-					</li> --}}
+
+
+					@foreach($categorie as $categ)
+						<li><a href="#">{{$categ->name}}</a>
+							<ul class="sub-menu">
+								<li><a href="#">Suelas</a></li>
+								<li><a href="#">Accesorios</a></li>
+								<li><a href="#">Herrajes</a></li>
+								<li><a href="#">Producto Terminado</a></li>
+								<li><a href="#">Telas</a></li>
+							</ul>
+	                    </li>
+					@endforeach	
                     <li><a href="#">Blog</a></li>
                     <li><a href="{{ route('contacto') }}">Contacto</a></li>
 				</ul>

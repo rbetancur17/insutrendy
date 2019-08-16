@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use Illuminate\Http\Request;
 use App\Product;
 use App\Categorie;
+use App\SubCategorie;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class SubCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +17,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        $categorie = Categorie::all();
-        return view('welcome', compact('products','categorie') );
+        $categories = Categorie::all();
+        return view('admin.subcategory', compact('categories') );
     }
 
     /**
@@ -38,7 +39,14 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $subcategory = new SubCategorie();
+        $subcategory->code = $request->input('code');
+        $subcategory->name = $request->input('name');
+        $subcategory->id_categorie = $request->input('categorie_id');
+        $subcategory->description = $request->input('description');
+        $subcategory->save();
+        return redirect()->back()->with('message', 'SubCategoria almacenada con éxito');
     }
 
     /**
@@ -85,4 +93,6 @@ class HomeController extends Controller
     {
         //
     }
+
+
 }
