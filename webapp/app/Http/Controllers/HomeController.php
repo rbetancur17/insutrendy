@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Categorie;
+use App\SubCategorie;
 
 class HomeController extends Controller
 {
@@ -17,8 +18,9 @@ class HomeController extends Controller
     {
 
         $products = Product::all();
-        $categorie = Categorie::all();
-        return view('welcome', compact('products','categorie') );
+        $categorie = Categorie::all(); 
+        $subcategorie = SubCategorie::all(); 
+        return view('welcome', compact('products','categorie','subcategorie') );
     }
 
     /**

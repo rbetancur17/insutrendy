@@ -82,34 +82,16 @@
 					<li><a href="{{ route('home') }}">Inicio</a></li>
 					<li><a href="#">Sobre Nosotros</a></li>
 					@foreach($categorie as $categ)
-						<li><a href="#">{{$categ->name}}</a>
+						<li><a href="{{ route('pageproducts') }}">{{$categ->name}}</a>
 							<ul class="sub-menu">
-								<li><a href="#">Suelas</a></li>
-								<li><a href="#">Accesorios</a></li>
-								<li><a href="#">Herrajes</a></li>
-								<li><a href="#">Producto Terminado</a></li>
-								<li><a href="#">Telas</a></li>
+								@foreach($subcategorie as $sub)	
+									@if ( $sub->id_categorie == $categ->id_categorie )
+										<li><a href="#">{{$sub->name}}</a></li>
+									@endif
+								@endforeach	
 							</ul>
 	                    </li>
 					@endforeach	
-					<li><a href="{{ route('pageproducts') }}">Zapatos y Bolsos</a>
-						<ul class="sub-menu">
-							<li><a href="#">Suelas</a></li>
-							<li><a href="#">Accesorios</a></li>
-							<li><a href="#">Herrajes</a></li>
-							<li><a href="#">Producto Terminado</a></li>
-							<li><a href="#">Telas</a></li>
-						</ul>
-                    </li>
-                    <li><a href="#">Vestuario</a>
-						<ul class="sub-menu">
-                            <li><a href="#">Aplicaciones</a></li>
-							<li><a href="#">Accesorios</a></li>
-							<li><a href="#">Herrajes</a></li>
-							<li><a href="#">Producto Terminado</a></li>
-							<li><a href="#">Telas</a></li>
-						</ul>
-					</li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="{{ route('contacto') }}">Contacto</a></li>
 				</ul>

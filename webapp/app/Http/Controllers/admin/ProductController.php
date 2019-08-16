@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Product;
-use App\Categorie;
+use App\SubCategorie;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,8 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $categories = Categorie::all();
-        return view('admin.product', compact('categories') );
+        $subcategories = SubCategorie::all();
+        return view('admin.product', compact('subcategories') );
     }
 
     /**
@@ -43,7 +43,7 @@ class ProductController extends Controller
         $product->code = $request->input('code');
         $product->name = $request->input('name');
         $product->price = $request->input('price');
-        $product->id_categorie = $request->input('categorie_id');
+        $product->id_subcategorie = $request->input('subcategorie_id');
         $product->description = $request->input('description');
         $product->save();
         return redirect()->back()->with('message', 'Producto almacenada con éxito');

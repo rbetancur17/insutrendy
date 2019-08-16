@@ -9,11 +9,11 @@ class SubCategorie extends Model
 {
     use SoftDeletes;
     protected $table = "insutrendy.subcategories";
-    protected $fillable = ['name','code','description','status'];
+    protected $fillable = ['name','code','description','status','id_categorie'];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public static function select(){
-        Categorie::all()->map(function($item) use (&$data){
+        SubCategorie::all()->map(function($item) use (&$data){
             $data[$item->id] = $item->name;
         });
         return $data;

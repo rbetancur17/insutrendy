@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
+use App\Categorie;
+use App\SubCategorie;
+
 
 class ProductPage extends Controller
 {
@@ -13,7 +17,10 @@ class ProductPage extends Controller
      */
     public function index()
     {
-        return view('productPage');
+        $products = Product::all();
+        $categorie = Categorie::all(); 
+        $subcategorie = SubCategorie::all(); 
+        return view('productPage',compact('products','categorie','subcategorie') );
     }
 
     /**

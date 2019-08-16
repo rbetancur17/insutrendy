@@ -14,7 +14,7 @@ class Product extends Model
     		'code',
     		'description',
     		'price',
-    		'id_categorie',
+    		'id_subcategorie',
     		'status',
     		'outstanding',
     		'image',

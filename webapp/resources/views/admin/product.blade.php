@@ -45,9 +45,9 @@
                                         </div>
                                         <div class="col-md-4">
                                           <div class="form-group">
-                                           <select name="categorie_id"  class="form-control">
-                                                @foreach($categories as $category)
-                                                  <option value="{{ $category->id_categorie }}">{{$category->name}}</option>
+                                           <select name="subcategorie_id"  class="form-control">
+                                                @foreach($subcategories as $category)
+                                                  <option value="{{ $category->id_subcategorie }}">{{$category->name}}</option>
                                                 @endforeach
                                             </select>                                            
                                           </div>
