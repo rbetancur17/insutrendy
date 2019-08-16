@@ -17,10 +17,10 @@ Route::get('/', function () {
 
 
 Route::get('home','HomeController@index')->name('home');
-Route::get('productPage','ProductPage@index')->name('pageproducts');
+Route::get('productPage/{idcategorie}','ProductPage@show')->name('pageproducts');
 
 // Productos
-Route::get('detailProduct', 'DetalleProducto@index')->name('productDetail');
+Route::get('detailProduct/{idproduct}', 'DetalleProducto@index')->name('productDetail');
 Route::get('Productquotation','CotizacionProducto@index')->name('quotation');
 
 Route::get('contact','Contacto@index')->name('contacto');

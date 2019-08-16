@@ -75,7 +75,7 @@
                 <img src="{{ asset('img/product/boton2.jpg') }}" alt="Insutrendy" class="featured-products">
                 <span><p>{{$prod->code}}
                     <br>{{$prod->name}}</p></span>
-                <a href="{{ route('productDetail') }}" class="btn btn-warning">Solicitar Información</a>
+                <a href="{{ route('productDetail',[$prod->id_product]) }}" class="btn btn-warning">Solicitar Información</a>
             </div>
              @endforeach
         </div>

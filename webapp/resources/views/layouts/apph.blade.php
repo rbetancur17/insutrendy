@@ -82,11 +82,11 @@
 					<li><a href="{{ route('home') }}">Inicio</a></li>
 					<li><a href="#">Sobre Nosotros</a></li>
 					@foreach($categorie as $categ)
-						<li><a href="{{ route('pageproducts') }}">{{$categ->name}}</a>
+						<li><a href="#">{{$categ->name}}</a>
 							<ul class="sub-menu">
 								@foreach($subcategorie as $sub)	
 									@if ( $sub->id_categorie == $categ->id_categorie )
-										<li><a href="#">{{$sub->name}}</a></li>
+										<li><a href="{{ route('pageproducts',[$sub->id_subcategorie]) }}">{{$sub->name}}</a></li>
 									@endif
 								@endforeach	
 							</ul>
