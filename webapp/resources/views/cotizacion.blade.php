@@ -12,9 +12,28 @@
 	</div>
 	<!-- Page info end -->
 
+	<section class="cart-section spad">
+		
+	</section>
 
 	<!-- cart section end -->
 	<section class="cart-section spad">
+			<div class="container">
+					<div class="row">
+						<div class="col-lg-8">
+							<div class="cart-table">
+								<h3>Tus Datos Personales</h3>
+								<form class="contact-form">
+										<input type="text" name="" placeholder="Nombre" style="border: solid 0.1em #000;">
+										<input type="text" name="" placeholder="Email" style="border: solid 0.1em #000;">
+										<input type="text" name="" placeholder="Movil" style="border: solid 0.1em #000;">
+										
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">
