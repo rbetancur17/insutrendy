@@ -60,11 +60,27 @@
                                       <label>Descripción</label>
                                       <div class="form-group">
                                         <label class="bmd-label-floating"> </label>
-                                        <textarea name="description" class="form-control" rows="5"></textarea>
+                                        <textarea name="description" class="form-control" rows="2"></textarea>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <label class="bmd-label-floating">Imagen 1</label>
+                                      <input type="file" name="image" class="form-control">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Imagen 2</label>
+                                        <input type="file" name="image2" class="form-control">
+                                    </div>
+                                  </div>
+                                </div>
+
                                 <button type="submit" class="btn btn-primary pull-right">Guardar</button>
                                 <div class="clearfix"></div>
                                 @if(session()->has('message'))

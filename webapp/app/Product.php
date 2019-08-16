@@ -9,7 +9,19 @@ class Product extends Model
 {
     use SoftDeletes;
     protected $table = "insutrendy.products";
-    protected $fillable = ['name','code','description','price','id_categorie','status','outstanding'];
+    protected $fillable = [
+    		'name',
+    		'code',
+    		'description',
+    		'price',
+    		'id_categorie',
+    		'status',
+    		'outstanding',
+    		'image',
+    		'image2',
+    		'image3',
+    		'image4'
+    	];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
 }
