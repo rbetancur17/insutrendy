@@ -16,11 +16,20 @@
     <form action="{{route('sendquotation')}}" method="post" class="contact-form">
     {{ csrf_field() }}			
 
+			
+
 
 		<div class="container">
 
 				<div class="row">
 					<div class="col-lg-8">
+
+				        @if(session()->has('message'))
+				            <div class="alert alert-success">
+				                {{ session()->get('message') }}
+				            </div>
+				        @endif		
+
 						<div class="cart-table">
 							<h3>Tus Datos Personales</h3>
 									<input type="text" name="nombre" placeholder="Nombre" style="border: solid 0.1em #000;">

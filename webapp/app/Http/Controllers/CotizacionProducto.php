@@ -48,9 +48,9 @@ class CotizacionProducto extends Controller
         $cantidad = $request->input('cantidad');
         try{
             Mail::send('emails.quotation', compact('product','nombreCliente','emailCliente','movilCliente','cantidad'), function($mail) use($product,$nombreCliente,$emailCliente,$movilCliente,$cantidad){
-                $mail->subject("Cotización de producto ");
+                $mail->subject("Cotización de producto");
                 $mail->to("stiven.betancur@gmail.com");
-                $mail->from( "director@insutrendy","Insutrendy" );
+                $mail->from( "info@insutrendy.com","Insutrendy" );
             });
         } catch (Exception $e) {}
 

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
+use App\Categorie;
+use App\SubCategorie;
 
 class Contacto extends Controller
 {
@@ -13,7 +16,10 @@ class Contacto extends Controller
      */
     public function index()
     {
-        return view('contacto');
+        $products = Product::all();
+        $categorie = Categorie::all(); 
+        $subcategorie = SubCategorie::all(); 
+        return view('contacto', compact('products','categorie','subcategorie') );
     }
 
     /**
