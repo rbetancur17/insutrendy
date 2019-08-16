@@ -94,8 +94,9 @@
 					</div>
 				</div>
 				<div class="col-lg-4 card-right">
-					<a href="" class="site-btn">Enviar Cotización</a>
-					<a href="" class="site-btn sb-dark">Continuar Cotizando</a>
+					<a href="" class="btn btn-warning btn-lg">Enviar Cotización &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+					<br><br>
+					<a href="" class="btn btn-dark btn-lg">Continuar Navegando</a>
 				</div>
 			</div>
 		</div>
