@@ -68,13 +68,13 @@
 
                                 <div class="row">
                                   <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="">
                                       <label class="bmd-label-floating">Imagen 1</label>
                                       <input type="file" name="image" class="form-control">
                                     </div>
                                   </div>
                                   <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="">
                                         <label class="bmd-label-floating">Imagen 2</label>
                                         <input type="file" name="image2" class="form-control">
                                     </div>
