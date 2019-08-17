@@ -6,6 +6,8 @@ use App\Product;
 use App\SubCategorie;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Image;
 
 class ProductController extends Controller
 {
@@ -45,7 +47,65 @@ class ProductController extends Controller
         $product->price = $request->input('price');
         $product->id_subcategorie = $request->input('subcategorie_id');
         $product->description = $request->input('description');
+
+        if($request->file('image1')!=null){
+            $rules = ['image1'=> 'required|image1|max:1024*1024*1',];
+            $messages = [
+                'image1.required' => 'la imagen es requerida',
+                'image1.image_poliza' => 'Formato no permitido',
+                'image1.max' => 'El maximo permitido es 1MB'
+            ];
+            $validator = Validator::make($request->all(),$rules, $messages);
+
+            $name = $product->code . '-' . $request->file('image1')->getClientOriginalName();
+            $request->file('image1')->move('img/product', $name);
+            $product->image = $name;
+        } 
+
+        if($request->file('image2')!=null){
+            $rules = ['image2'=> 'required|image1|max:1024*1024*1',];
+            $messages = [
+                'image2.required' => 'la imagen es requerida',
+                'image2.image_poliza' => 'Formato no permitido',
+                'image2.max' => 'El maximo permitido es 1MB'
+            ];
+            $validator = Validator::make($request->all(),$rules, $messages);
+
+            $name = $product->code . '-' . $request->file('image2')->getClientOriginalName();
+            $request->file('image2')->move('img/product', $name);
+            $product->image2 = $name;
+        }    
+
+        if($request->file('image3')!=null){
+            $rules = ['image3'=> 'required|image1|max:1024*1024*1',];
+            $messages = [
+                'image3.required' => 'la imagen es requerida',
+                'image3.image_poliza' => 'Formato no permitido',
+                'image3.max' => 'El maximo permitido es 1MB'
+            ];
+            $validator = Validator::make($request->all(),$rules, $messages);
+
+            $name = $product->code . '-' . $request->file('image3')->getClientOriginalName();
+            $request->file('image3')->move('img/product', $name);
+            $product->image3 = $name;
+        } 
+
+        if($request->file('image4')!=null){
+            $rules = ['image4'=> 'required|image1|max:1024*1024*1',];
+            $messages = [
+                'image4.required' => 'la imagen es requerida',
+                'image4.image_poliza' => 'Formato no permitido',
+                'image4.max' => 'El maximo permitido es 1MB'
+            ];
+            $validator = Validator::make($request->all(),$rules, $messages);
+
+            $name = $product->code . '-' . $request->file('image4')->getClientOriginalName();
+            $request->file('image4')->move('img/product', $name);
+            $product->image4 = $name;
+        }         
+
         $product->save();
+
         return redirect()->back()->with('message', 'Producto almacenada con éxito');
     }
 
