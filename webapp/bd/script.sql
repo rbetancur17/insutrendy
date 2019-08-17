@@ -35,7 +35,8 @@ DELETE FROM `categories`;
 INSERT INTO `categories` (`id_categorie`, `code`, `description`, `name`, `created_at`, `updated_at`, `deleted_at`, `status`) VALUES
 	(8, '001', 'Zapatos y Bolsos', 'Zapatos y Bolsos', '2019-08-16', '2019-08-16', NULL, NULL),
 	(9, '003', 'Vestuario', 'Vestuario', '2019-08-16', '2019-08-16', NULL, NULL),
-	(10, '002', 'Accesorios', 'Accesorios', '2019-08-16', '2019-08-16', NULL, NULL);
+	(10, '002', 'Accesorios', 'Accesorios', '2019-08-16', '2019-08-16', NULL, NULL),
+	(11, '004', 'cuero', 'Cuero', '2019-08-16', '2019-08-16', NULL, NULL);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 
 -- Volcando estructura para tabla insutrendy.products
@@ -60,17 +61,20 @@ CREATE TABLE IF NOT EXISTS `products` (
   CONSTRAINT `FK_products_subcategories` FOREIGN KEY (`id_subcategorie`) REFERENCES `subcategories` (`id_subcategorie`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla insutrendy.products: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla insutrendy.products: ~7 rows (aproximadamente)
 DELETE FROM `products`;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
 INSERT INTO `products` (`id_product`, `code`, `name`, `description`, `price`, `created_at`, `id_subcategorie`, `updated_at`, `deleted_at`, `status`, `outstanding`, `image`, `image2`, `image3`, `image4`) VALUES
-	(3, '1', 'Suela de zapato', 'Suela de producto', 10000, '2019-08-16', 1, '2019-08-16', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(4, '02', 'Suela de zapato', 'suela de zapto', 5000, '2019-08-16', 1, '2019-08-16', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(5, '3', 'Herraje de collar', 'Herraje de collar', 1000, '2019-08-16', 2, '2019-08-16', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(9, '5', 'Camiseta china', 'Camiseta china', NULL, '2019-08-16', 4, '2019-08-16', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(10, '6', 'Jeans chinos', 'Jeans chinos', 5000, '2019-08-16', 5, '2019-08-16', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(11, '7', 'Vestido chino largo', 'Vestido chino largo', NULL, '2019-08-16', 6, '2019-08-16', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(12, '9', 'Vestido rojo chino', 'Vestido rojo chino', 1000, '2019-08-16', 6, '2019-08-16', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+	(3, '1', 'Suela de zapato', 'Suela de producto', 10000, '2019-08-16', 1, '2019-08-16', NULL, NULL, NULL, 'product3.jpg', NULL, NULL, NULL),
+	(4, '02', 'Suela de zapato', 'suela de zapto', 5000, '2019-08-16', 1, '2019-08-16', NULL, NULL, NULL, 'boton3.jpg', NULL, NULL, NULL),
+	(5, '3', 'Herraje de collar', 'Herraje de collar', 1000, '2019-08-16', 2, '2019-08-16', NULL, NULL, NULL, 'boton1.jpg', NULL, NULL, NULL),
+	(9, '5', 'Camiseta china', 'Camiseta china', NULL, '2019-08-16', 4, '2019-08-16', NULL, NULL, NULL, '6.jpg', NULL, NULL, NULL),
+	(10, '6', 'Jeans chinos', 'Jeans chinos', 5000, '2019-08-16', 5, '2019-08-16', NULL, NULL, NULL, '7.jpg', NULL, NULL, NULL),
+	(11, '7', 'Vestido chino largo', 'Vestido chino largo', NULL, '2019-08-16', 6, '2019-08-16', NULL, NULL, NULL, '10.jpg', NULL, NULL, NULL),
+	(12, '9', 'Vestido rojo chino', 'Vestido rojo chino', 1000, '2019-08-16', 6, '2019-08-16', NULL, NULL, NULL, '4.jpg', NULL, NULL, NULL),
+	(13, '057', 'tela zapato cuero', NULL, 50000, '2019-08-16', 10, '2019-08-16', NULL, NULL, NULL, '3.jpg', NULL, NULL, NULL),
+	(14, '10', 'Camiseta china sport', 'f', 20000, '2019-08-17', 4, '2019-08-17', NULL, NULL, NULL, '10-5c4ef04a9c24a-483212-500x500.jpg', NULL, NULL, NULL),
+	(15, '11', 'Camiseta china futbol', 'Camiseta', 1000, '2019-08-17', 4, '2019-08-17', NULL, NULL, NULL, '11-5c4ef04a9c24a-483212-500x500.jpg', '11-camiseta-futbol-adidas-primera-equipacion-juventus-hombre-D_NQ_NP_973085-MLA29510380497_022019-Q.jpg', '11-camiseta-hobbies-percha-g.jpg', '11-descarga.jpg');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 
 -- Volcando estructura para tabla insutrendy.subcategories
@@ -99,7 +103,8 @@ INSERT INTO `subcategories` (`id_subcategorie`, `name`, `description`, `id_categ
 	(5, 'Jeans', 'Jeans', 9, '006', '2019-08-16', '2019-08-16', NULL),
 	(6, 'Vestido', 'Vestido', 9, '007', '2019-08-16', '2019-08-16', NULL),
 	(7, 'Collares', 'collares', 10, '009', '2019-08-16', '2019-08-16', NULL),
-	(8, 'Aretes', 'Aretes', 10, '010', '2019-08-16', '2019-08-16', NULL);
+	(8, 'Aretes', 'Aretes', 10, '010', '2019-08-16', '2019-08-16', NULL),
+	(10, 'cuero de zaapato', 'zapato', 11, '011', '2019-08-16', '2019-08-16', NULL);
 /*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
 
 -- Volcando estructura para tabla insutrendy.users
