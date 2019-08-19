@@ -29,7 +29,7 @@
 							<div class="col-lg-4 col-sm-6">
 								<div class="product-item">
 									<div class="pi-pic">
-										<img src="../img/product/6.jpg" alt="">
+										<img src="{{asset('/img/product/'.$prod->image)}}" alt="">
 
 									</div>
 									<div class="pi-text">

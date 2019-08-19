@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-xl-12">
-                <form action="{{route('productcreate')}}" method="post">
+                <form action="{{route('productcreate')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="card">
                             <div class="card-header card-header-primary">
@@ -70,7 +70,7 @@
                                   <div class="col-md-6">
                                     <div class="">
                                       <label class="bmd-label-floating">Imagen 1</label>
-                                      <input type="file" name="image" class="form-control">
+                                      <input type="file" name="image1" class="form-control">
                                     </div>
                                   </div>
                                   <div class="col-md-6">
@@ -80,6 +80,21 @@
                                     </div>
                                   </div>
                                 </div>
+
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="">
+                                      <label class="bmd-label-floating">Imagen 1</label>
+                                      <input type="file" name="image3" class="form-control">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="">
+                                        <label class="bmd-label-floating">Imagen 2</label>
+                                        <input type="file" name="image4" class="form-control">
+                                    </div>
+                                  </div>
+                                </div>                                
 
                                 <button type="submit" class="btn btn-primary pull-right">Guardar</button>
                                 <div class="clearfix"></div>

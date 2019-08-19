@@ -72,7 +72,7 @@
         <div class="row">
             @foreach($products as $prod)
             <div class="col-12 col-sm-12 col-md-3 col-xl-3">
-                <img src="{{ asset('img/product/boton2.jpg') }}" alt="Insutrendy" class="featured-products">
+                <img src="{{asset('/img/product/'.$prod->image)}}" alt="Insutrendy" class="featured-products">
                 <span><p>{{$prod->code}}
                     <br>{{$prod->name}}</p></span>
                 <a href="{{ route('productDetail',[$prod->id_product]) }}" class="btn btn-warning">Solicitar Información</a>

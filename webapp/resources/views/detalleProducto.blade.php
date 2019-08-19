@@ -40,14 +40,26 @@ s0.parentNode.insertBefore(s1,s0);
 				@foreach($products as $prod)
 					<div class="col-lg-6">
 						<div class="product-pic-zoom">
-							<img class="product-big-img" src="../img/product/boton1.jpg" alt="">
+							<img class="product-big-img" src="{{asset('/img/product/'.$prod->image)}}" alt="">
 						</div>
 						<div class="product-thumbs" tabindex="1" style="overflow: hidden; outline: none;">
 							<div class="product-thumbs-track">
-								<div class="pt active" data-imgbigurl="../img/product/boton1.jpg"><img src="../img/product/boton1.jpg" alt=""></div>
-								<div class="pt" data-imgbigurl="../img/product/boton1.jpg"><img src="../img/product/boton1.jpg" alt=""></div>
-								<div class="pt" data-imgbigurl="../img/product/boton2.jpg"><img src="../img/product/boton2.jpg" alt=""></div>
-								<div class="pt" data-imgbigurl="../img/product/boton3.jpg"><img src="../img/product/boton3.jpg" alt=""></div>
+								<div class="pt active" 
+									data-imgbigurl="{{asset('/img/product/'.$prod->image)}}">
+									<img src="{{asset('/img/product/'.$prod->image)}}" alt="">
+								</div>
+								<div class="pt active" 
+									data-imgbigurl="{{asset('/img/product/'.$prod->image2)}}">
+									<img src="{{asset('/img/product/'.$prod->image2)}}" alt="">
+								</div>
+								<div class="pt active" 
+									data-imgbigurl="{{asset('/img/product/'.$prod->image3)}}">
+									<img src="{{asset('/img/product/'.$prod->image3)}}" alt="">
+								</div>
+								<div class="pt active" 
+									data-imgbigurl="{{asset('/img/product/'.$prod->image4)}}">
+									<img src="{{asset('/img/product/'.$prod->image4)}}" alt="">
+								</div>
 							</div>
 						</div>
 					</div>
