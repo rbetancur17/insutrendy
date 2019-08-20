@@ -4,30 +4,49 @@
 @section('content')
 <section class="hero-section">
 		<div class="hero-slider owl-carousel">
-			<div class="hs-item set-bg" data-setbg="img/bg.jpg">
+			<div class="hs-item set-bg" data-setbg="{{ asset('img/slider/1.jpg') }}">
 				<div class="container">
 					<div class="row">
 						<div class="col-xl-6 col-lg-7 text-white">
-							<span>New Arrivals</span>
-							<h2>denim jackets</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+							<span> </span>
+							<h2></h2>
+							<p> </p>
 
 						</div>
 					</div>
-
 				</div>
 			</div>
-			<div class="hs-item set-bg" data-setbg="img/bg-2.jpg">
+			<div class="hs-item set-bg" data-setbg="{{ asset('img/slider/2.jpg') }}">
 				<div class="container">
 					<div class="row">
 						<div class="col-xl-6 col-lg-7 text-white">
-							<span>New Arrivals</span>
-							<h2>denim jackets</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
-		
+							<span></span>
+							<h2></h2>
+							<p> </p>
 						</div>
 					</div>
-
+				</div>
+			</div>
+			<div class="hs-item set-bg" data-setbg="{{ asset('img/slider/3.jpg') }}">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-6 col-lg-7 text-white">
+							<span></span>
+							<h2></h2>
+							<p> </p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hs-item set-bg" data-setbg="{{ asset('img/slider/4.jpg') }}">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-6 col-lg-7 text-white">
+							<span></span>
+							<h2></h2>
+							<p> </p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -75,8 +94,9 @@
                 <img src="{{asset('/img/product/'.$prod->image)}}" alt="Insutrendy" class="featured-products">
                 <span><p>{{$prod->code}}
                     <br>{{$prod->name}}</p></span>
-                <a href="{{ route('productDetail',[$prod->id_product]) }}" class="btn btn-warning">Solicitar Información</a>
-            </div>
+				<a href="{{ route('productDetail',[$prod->id_product]) }}" class="btn btn-warning">Solicitar Información</a>
+				<br><hr><br>
+			</div>
              @endforeach
         </div>
     </div>

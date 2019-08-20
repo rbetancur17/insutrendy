@@ -115,7 +115,7 @@
 					<div class="footer-widget about-widget">
 						<h2>About</h2>
                         <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam frin-gilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
-                        <a href="{{ route('homeAdmin') }}">Admin Zone</a>
+                        <a href="{{ route('logeo') }}">Admin Zone</a>
 						<img src="img/cards.png" alt="">
 					</div>
 				</div>

@@ -25,8 +25,13 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/login';
 
+
+    public function index()
+    {
+        return view('auth.login');
+    }
     /**
      * Create a new controller instance.
      *

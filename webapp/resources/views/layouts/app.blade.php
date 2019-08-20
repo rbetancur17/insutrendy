@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Divisima | eCommerce Template</title>
+	<title>Insutrendy</title>
 	<meta charset="UTF-8">
-	<meta name="description" content=" Divisima | eCommerce Template">
-	<meta name="keywords" content="divisima, eCommerce, creative, html">
+	<meta name="description" content=" Insutrendy | eCommerce">
+	<meta name="keywords" content="Insutrendy, eCommerce, creative, Moda">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
 	<link href="img/favicon.ico" rel="shortcut icon"/>
@@ -14,14 +14,16 @@
 
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{assets('css/bootstrap.min.css')}}">
-	<link rel="stylesheet" href="{{assets('css/font-awesome.min.css')}}"/>
-	<link rel="stylesheet" href="{{assets('css/flaticon.css')}}"/>
-	<link rel="stylesheet" href="css/slicknav.min.css"/>
-	<link rel="stylesheet" href="css/jquery-ui.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
-	<link rel="stylesheet" href="css/animate.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/flaticon.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/animate.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/animate2.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+	<link href=" {{ asset('css/jquery.bxslider.css') }}" rel="stylesheet" />
 
 
 	<!--[if lt IE 9]>
@@ -43,29 +45,31 @@
 				<div class="row">
 					<div class="col-lg-2 text-center text-lg-left">
 						<!-- logo -->
-						<a href="./index.html" class="site-logo">
-							<img src="img/logo.png" alt="">
+						<a href="{{ route('home') }}" class="site-logo">
+							<img src="{{ asset('img/logoNew.png') }}" alt="">
 						</a>
 					</div>
 					<div class="col-xl-6 col-lg-5">
+                        <br><br>
 						<form class="header-search-form">
-							<input type="text" placeholder="Search on divisima ....">
-							<button><i class="flaticon-search"></i></button>
+							<input type="text" placeholder="Busca en Insutrendy ...." style="border:0.2em solid #ffc107">
+							<button><i class="flaticon-search" style="color: #ffc107"></i></button>
 						</form>
 					</div>
 					<div class="col-xl-4 col-lg-5">
+                        <br><br>
 						<div class="user-panel">
 							<div class="up-item">
-								<i class="flaticon-profile"></i>
-								<a href="#">Sign</a> In or <a href="#">Create Account</a>
+								<i class="flaticon-profile" style="color:#ffc107"></i>
+								<a href="#" style="color:#ffc107">Ingresa</a>
 							</div>
-							<div class="up-item">
+							{{-- <div class="up-item">
 								<div class="shopping-card">
 									<i class="flaticon-bag"></i>
 									<span>0</span>
 								</div>
 								<a href="#">Shopping Cart</a>
-							</div>
+							</div> --}}
 						</div>
 					</div>
 				</div>
@@ -74,110 +78,13 @@
 		<nav class="main-navbar">
 			<div class="container">
 				<!-- menu -->
-				<ul class="main-menu">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Women</a></li>
-					<li><a href="#">Men</a></li>
-					<li><a href="#">Jewelry
-						<span class="new">New</span>
-					</a></li>
-					<li><a href="#">Shoes</a>
-						<ul class="sub-menu">
-							<li><a href="#">Sneakers</a></li>
-							<li><a href="#">Sandals</a></li>
-							<li><a href="#">Formal Shoes</a></li>
-							<li><a href="#">Boots</a></li>
-							<li><a href="#">Flip Flops</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Pages</a>
-						<ul class="sub-menu">
-							<li><a href="./product.html">Product Page</a></li>
-							<li><a href="./category.html">Category Page</a></li>
-							<li><a href="./cart.html">Cart Page</a></li>
-							<li><a href="./checkout.html">Checkout Page</a></li>
-							<li><a href="./contact.html">Contact Page</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Blog</a></li>
+
 				</ul>
 			</div>
 		</nav>
 	</header>
 
-    <section class="hero-section">
-		<div class="hero-slider owl-carousel">
-			<div class="hs-item set-bg" data-setbg="img/bg.jpg">
-				<div class="container">
-					<div class="row">
-						<div class="col-xl-6 col-lg-7 text-white">
-							<span>New Arrivals</span>
-							<h2>denim jackets</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-							<a href="#" class="site-btn sb-line">DISCOVER</a>
-							<a href="#" class="site-btn sb-white">ADD TO CART</a>
-						</div>
-					</div>
-					<div class="offer-card text-white">
-						<span>from</span>
-						<h2>$29</h2>
-						<p>SHOP NOW</p>
-					</div>
-				</div>
-			</div>
-			<div class="hs-item set-bg" data-setbg="img/bg-2.jpg">
-				<div class="container">
-					<div class="row">
-						<div class="col-xl-6 col-lg-7 text-white">
-							<span>New Arrivals</span>
-							<h2>denim jackets</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-							<a href="#" class="site-btn sb-line">DISCOVER</a>
-							<a href="#" class="site-btn sb-white">ADD TO CART</a>
-						</div>
-					</div>
-					<div class="offer-card text-white">
-						<span>from</span>
-						<h2>$29</h2>
-						<p>SHOP NOW</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="slide-num-holder" id="snh-1"></div>
-		</div>
-	</section>
-    <section class="features-section">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-4 p-0 feature">
-					<div class="feature-inner">
-						<div class="feature-icon">
-							<img src="img/icons/1.png" alt="#">
-						</div>
-						<h2>Fast Secure Payments</h2>
-					</div>
-				</div>
-				<div class="col-md-4 p-0 feature">
-					<div class="feature-inner">
-						<div class="feature-icon">
-							<img src="img/icons/2.png" alt="#">
-						</div>
-						<h2>Premium Products</h2>
-					</div>
-				</div>
-				<div class="col-md-4 p-0 feature">
-					<div class="feature-inner">
-						<div class="feature-icon">
-							<img src="img/icons/3.png" alt="#">
-						</div>
-						<h2>Free & fast Delivery</h2>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    
 
     @yield('content')
 
@@ -186,39 +93,31 @@
     <section class="footer-section">
 		<div class="container">
 			<div class="footer-logo text-center">
-				<a href="index.html"><img src="./img/logo-light.png" alt=""></a>
+				<a href="index.html"><img src="{{ asset('img/logo_trans.png') }}" alt=""></a>
 			</div>
 			<div class="row">
 				<div class="col-lg-3 col-sm-6">
 					<div class="footer-widget about-widget">
 						<h2>About</h2>
-						<p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam frin-gilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
+                        <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam frin-gilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
+                        <a href="{{ route('logeo') }}">Admin Zone</a>
 						<img src="img/cards.png" alt="">
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<div class="footer-widget about-widget">
-						<h2>Questions</h2>
+						<h2>Menu</h2>
 						<ul>
-							<li><a href="">About Us</a></li>
-							<li><a href="">Track Orders</a></li>
-							<li><a href="">Returns</a></li>
-							<li><a href="">Jobs</a></li>
-							<li><a href="">Shipping</a></li>
-							<li><a href="">Blog</a></li>
-						</ul>
-						<ul>
-							<li><a href="">Partners</a></li>
-							<li><a href="">Bloggers</a></li>
-							<li><a href="">Support</a></li>
-							<li><a href="">Terms of Use</a></li>
-							<li><a href="">Press</a></li>
+							<li><a href="">Sobre Nosotros</a></li>
+							<li><a href="">Zapatos y Bolsos </a></li>
+							<li><a href="">Vestuario</a></li>
+							<li><a href="">Contacto</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<div class="footer-widget about-widget">
-						<h2>Questions</h2>
+						<h2>Instagram</h2>
 						<div class="fw-latest-post-widget">
 							<div class="lp-item">
 								<div class="lp-thumb set-bg" data-setbg="img/blog-thumbs/1.jpg"></div>
@@ -241,18 +140,18 @@
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<div class="footer-widget contact-widget">
-						<h2>Questions</h2>
+						<h2>Ubicación</h2>
 						<div class="con-info">
 							<span>C.</span>
-							<p>Your Company Ltd </p>
+							<p>Insutrendy Global Trade </p>
 						</div>
 						<div class="con-info">
-							<span>B.</span>
-							<p>1481 Creekside Lane  Avila Beach, CA 93424, P.O. BOX 68 </p>
+							<span>D.</span>
+							<p>Room 1309, Block 9, Aoyuandi Distric, Panyu district, Guangzhou C. </p>
 						</div>
 						<div class="con-info">
 							<span>T.</span>
-							<p>+53 345 7953 32453</p>
+							<p>020-84506572</p>
 						</div>
 						<div class="con-info">
 							<span>E.</span>
@@ -265,17 +164,20 @@
 		<div class="social-links-warp">
 			<div class="container">
 				<div class="social-links">
-					<a href="" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a>
-					<a href="" class="google-plus"><i class="fa fa-google-plus"></i><span>g+plus</span></a>
-					<a href="" class="pinterest"><i class="fa fa-pinterest"></i><span>pinterest</span></a>
-					<a href="" class="facebook"><i class="fa fa-facebook"></i><span>facebook</span></a>
-					<a href="" class="twitter"><i class="fa fa-twitter"></i><span>twitter</span></a>
-					<a href="" class="youtube"><i class="fa fa-youtube"></i><span>youtube</span></a>
-					<a href="" class="tumblr"><i class="fa fa-tumblr-square"></i><span>tumblr</span></a>
+                    <a href="" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a>
+                    <a href="" class="instagram"><span></span></a>
+                    <a href="" class="google-plus"><i class="fa fa-google-plus"></i><span>g+plus</span></a>
+                    <a href="" class="instagram"><span></span></a>
+                    <a href="" class="pinterest"><i class="fa fa-pinterest"></i><span>pinterest</span></a>
+                    <a href="" class="instagram"><span></span></a>
+                    <a href="" class="facebook"><i class="fa fa-facebook"></i><span>facebook</span></a>
+                    <a href="" class="instagram"><span></span></a>
+                    <a href="" class="youtube"><i class="fa fa-youtube"></i><span>youtube</span></a>
+                    <a href="" class="instagram"><span></span></a>
 				</div>
 
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> 
-<p class="text-white text-center mt-5">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+<p class="text-white text-center mt-5">Copyright &copy;<script>document.write(new Date().getFullYear());</script> QuarksIT <i class="fa fa-heart-o" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank"></a></p>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
 			</div>
@@ -286,14 +188,17 @@
 
 
 	<!--====== Javascripts & Jquery ======-->
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.slicknav.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.nicescroll.min.js"></script>
-	<script src="js/jquery.zoom.min.js"></script>
-	<script src="js/jquery-ui.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.slicknav.min.js') }}"></script>
+	<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
+	<script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+	<script src="{{ asset('js/main.js') }}"></script>
+	<script src="{{ asset('js/jquery.bxslider.min.js') }}"></script>
+	<script src="{{ asset('js/animate.js') }}"></script>
 
 	</body>
 </html>

@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('welcome');
 });
+
+Route::get('login','auth\LoginController@index')->name('logeo');
 
 
 Route::get('home','HomeController@index')->name('home');
