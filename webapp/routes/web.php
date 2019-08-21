@@ -15,8 +15,9 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
-Route::get('login','auth\LoginController@index')->name('logeo');
+Route::get('begin','Auth\LoginController@index')->name('logeo');
 
+Route::post('login','Auth\LoginController@ingreso')->name('login');
 
 Route::get('home','HomeController@index')->name('home');
 Route::get('productPage/{idcategorie}','ProductPage@show')->name('pageproducts');

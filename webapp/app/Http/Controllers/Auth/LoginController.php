@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Failed;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Request;
 
 class LoginController extends Controller
 {
@@ -25,12 +28,26 @@ class LoginController extends Controller
      *
      * @var string
      */
-    //protected $redirectTo = '/login';
+    protected $redirectTo = '/login';
 
+
+    public function ingreso(Request $request){
+        $this->validate($request, [
+    		'email' => 'required|exists:users,email',
+    		'password' => 'required'
+    	]);
+
+    	if(!Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+            return back()
+            ->withErrors(['email' => trans('auth.failed')]);
+    	}
+
+    	return view('admin.index',Auth::user());
+    }
 
     public function index()
     {
-        return view('auth.login');
+         return view('auth.login');
     }
     /**
      * Create a new controller instance.
