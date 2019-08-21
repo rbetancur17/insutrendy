@@ -11,13 +11,15 @@
 |
 */
 
+use App\Http\Controllers\ProductPage;
+
 Route::get('/home', function () {
     return view('welcome');
 });
 
 Route::get('begin','Auth\LoginController@index')->name('logeo');
 
-Route::post('login','Auth\LoginController@ingreso')->name('login');
+//Route::post('login','Auth\LoginController@ingreso')->name('login');
 
 Route::get('home','HomeController@index')->name('home');
 Route::get('productPage/{idcategorie}','ProductPage@show')->name('pageproducts');
@@ -28,7 +30,7 @@ Route::get('Productquotation/{idproduct}','CotizacionProducto@show')->name('quot
 Route::post('sendquotation','CotizacionProducto@store')->name('sendquotation');
 
 Route::get('contact','Contacto@index')->name('contacto');
-
+Route::get('list','ProductPage@list')->name('lista');
 
 
 // admin

@@ -33,6 +33,12 @@ class ProductPage extends Controller
         //
     }
 
+
+    public function list(){
+        $products = Product::get();
+        return view('admin.listaProductos', compact('products'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
