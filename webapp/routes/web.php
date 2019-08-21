@@ -35,6 +35,8 @@ Route::get('list','ProductPage@list')->name('lista');
 
 
 // admin
+Auth::routes();
+
 Route::get('welcome','HomeController@index')->name('welcome');
 Route::get('dashboard','admin\Dashboard@index')->name('homeAdmin');
 Route::get('category','admin\CategoryController@index')->name('adminCategory');
@@ -43,5 +45,6 @@ Route::get('product','admin\ProductController@index')->name('adminProduct');
 Route::post('categorycreate','admin\CategoryController@store')->name('categorycreate');
 Route::post('subcategoriecreate','admin\SubCategoryController@store')->name('subcategoriecreate');
 Route::post('productcreate','admin\ProductController@store')->name('productcreate');
+
 
 
