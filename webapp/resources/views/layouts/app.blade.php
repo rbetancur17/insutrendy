@@ -61,7 +61,7 @@
 						<div class="user-panel">
 							<div class="up-item">
 								<i class="flaticon-profile" style="color:#ffc107"></i>
-								<a href="#" style="color:#ffc107">Ingresa</a>
+								<a href="{{ route('Showlogin') }}" style="color:#ffc107">Ingresa</a>
 							</div>
 							{{-- <div class="up-item">
 								<div class="shopping-card">
@@ -100,7 +100,7 @@
 					<div class="footer-widget about-widget">
 						<h2>About</h2>
                         <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam frin-gilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
-                        <a href="{{ route('logeo') }}">Admin Zone</a>
+                        <a href="{{ route('Showlogin') }}">Admin Zone</a>
 						<img src="img/cards.png" alt="">
 					</div>
 				</div>

@@ -1,16 +1,14 @@
 <?php
-
-use Illuminate\Database\Seeder;
-
-class DatabaseSeeder extends Seeder
+ 
+use Styde\Seeder\BaseSeeder;
+ 
+class DatabaseSeeder extends BaseSeeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        // $this->call(UsersTableSeeder::class);
-    }
+ 	protected $truncate = array(
+        'users',
+    );
+    
+    protected $seeders = array(
+        'User',
+    );
 }

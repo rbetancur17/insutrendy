@@ -3,45 +3,52 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Auth\Events\Failed;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
-use Symfony\Component\HttpFoundation\Request;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
+   
+   use AuthenticatesUsers;
 
-    use AuthenticatesUsers;
+   protected $redirectTo = '/default';
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/login';
-
-
-    public function index()
-    {
-         return view('auth.login');
-    }
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
+   
+
+   public function ShowLogin(){
+
+     return view('auth.login');
+   }
+
+   public function Login(){
+
+    $credentials = $this->validate(request(),[
+        'email'     => 'email|required|string',
+        'password'  => 'required|string'
+    ]);
+
+
+    if(Auth::attempt($credentials)){
+        return redirect()->intended('/dashboard');
+    }
+
+    return back()
+        ->withErrors(['email' =>'Datos Invalidos'])
+        ->withInput(request(['email']));
+
+   }
+
+    public function redirectPath()
+    {
+        if (auth()->user()->admin == 1) {
+            return '/admin';
+        }
+
+        return  '/default';
+    }
+
 }

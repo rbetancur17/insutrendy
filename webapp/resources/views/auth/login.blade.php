@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="post" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}" data-toggle="validator" class="popup-form">
                         @csrf
 
                         <div class="form-group row">
@@ -39,24 +39,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                      
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <a href="{{ route('homeAdmin') }}" class="btn btn-danger btn-lg">Entrar</a>
-                                 {{-- <button type="submit" class="btn btn-danger btn-lg">
+                                <button type="submit" class="btn btn-danger btn-lg">
                                     {{ __('Entrar') }}
-                                </button> --}}
+                                </button> 
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
