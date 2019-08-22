@@ -120,6 +120,11 @@ class ProductController extends Controller
         //
     }
 
+    public function list(){
+        $products = Product::get();
+        return view('admin.listaProductos', compact('products'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -128,7 +133,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $products = Product::where('id_product',$id)->get();
+        return view('admin.detalleProduct',compact('products'));
     }
 
     /**

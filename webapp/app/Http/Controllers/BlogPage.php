@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Product;
+use App\Blog;
 use App\Categorie;
 use App\SubCategorie;
+use Illuminate\Http\Request;
 
-
-class ProductPage extends Controller
+class BlogPage extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +16,10 @@ class ProductPage extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        $categorie = Categorie::all(); 
+        $blogs = Blog::all();
+        $categorie = Categorie::all();
         $subcategorie = SubCategorie::all(); 
-        return view('productPage',compact('products','categorie','subcategorie') );
+        return view('blogSite', compact('blogs','categorie','subcategorie'));
     }
 
     /**
@@ -32,9 +31,6 @@ class ProductPage extends Controller
     {
         //
     }
-
-
-    
 
     /**
      * Store a newly created resource in storage.
@@ -55,10 +51,7 @@ class ProductPage extends Controller
      */
     public function show($id)
     {
-        $products = Product::where('id_product',$id)->get();
-        $categorie = Categorie::all(); 
-        $subcategorie = SubCategorie::all(); 
-        return view('productPage',compact('products','categorie','subcategorie') );
+        //
     }
 
     /**
@@ -69,7 +62,7 @@ class ProductPage extends Controller
      */
     public function edit($id)
     {
-        
+        //
     }
 
     /**

@@ -62,6 +62,12 @@
               <p>Productos</p>
             </a>
           </li>
+          <li class="nav-item ">
+              <a class="nav-link" href="{{ route('NewBlog') }}">
+                <i class="material-icons">event_note</i>
+                <p>Blog</p>
+              </a>
+            </li>
 
         </ul>
       </div>

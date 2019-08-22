@@ -92,7 +92,7 @@
 							</ul>
 	                    </li>
 					@endforeach	
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="{{ route('BlogSite') }}">Blog</a></li>
                     <li><a href="{{ route('contacto') }}">Contacto</a></li>
 				</ul>
 			</div>

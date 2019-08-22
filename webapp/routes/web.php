@@ -31,7 +31,8 @@ Route::get('Productquotation/{idproduct}','CotizacionProducto@show')->name('quot
 Route::post('sendquotation','CotizacionProducto@store')->name('sendquotation');
 
 Route::get('contact','Contacto@index')->name('contacto');
-Route::get('list','ProductPage@list')->name('lista');
+
+Route::get('siteBlog','BlogPage@index')->name('BlogSite');
 
 
 // admin
@@ -45,6 +46,10 @@ Route::get('product','admin\ProductController@index')->name('adminProduct');
 Route::post('categorycreate','admin\CategoryController@store')->name('categorycreate');
 Route::post('subcategoriecreate','admin\SubCategoryController@store')->name('subcategoriecreate');
 Route::post('productcreate','admin\ProductController@store')->name('productcreate');
+Route::get('list','admin\ProductController@list')->name('lista');
+Route::get('edit/{id}','admin\ProductController@edit')->name('editar');
+Route::get('blog','admin\BlogController@index')->name('NewBlog');
+Route::post('post','admin\BlogController@store')->name('newpost');
 
 
 

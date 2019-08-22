@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Blog;
 use Illuminate\Http\Request;
-use App\Product;
-use App\Categorie;
-use App\SubCategorie;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
-
-class ProductPage extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +16,7 @@ class ProductPage extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        $categorie = Categorie::all(); 
-        $subcategorie = SubCategorie::all(); 
-        return view('productPage',compact('products','categorie','subcategorie') );
+        return view('admin.blog');
     }
 
     /**
@@ -33,9 +29,6 @@ class ProductPage extends Controller
         //
     }
 
-
-    
-
     /**
      * Store a newly created resource in storage.
      *
@@ -44,7 +37,28 @@ class ProductPage extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Blog();
+        $post->title = $request->input('title');
+        $post->fecha = $request->input('dateEntrace');
+        $post->content = $request->input('content');
+
+        if($request->file('image')!=null){
+            $rules = ['image'=> 'required|image|max:1024*1024*1',];
+            $messages = [
+                'image.required' => 'la imagen es requerida',
+                'image.image_poliza' => 'Formato no permitido',
+                'image.max' => 'El maximo permitido es 1MB'
+            ];
+            $validator = Validator::make($request->all(),$rules, $messages);
+
+            $name = $post->code . '-' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move('img/blog-thumbs', $name);
+            $post->image = $name;
+        }
+
+        $post->save();
+
+        return redirect()->back()->with('message', 'Post almacenada con éxito');
     }
 
     /**
@@ -55,10 +69,7 @@ class ProductPage extends Controller
      */
     public function show($id)
     {
-        $products = Product::where('id_product',$id)->get();
-        $categorie = Categorie::all(); 
-        $subcategorie = SubCategorie::all(); 
-        return view('productPage',compact('products','categorie','subcategorie') );
+        //
     }
 
     /**
@@ -69,7 +80,7 @@ class ProductPage extends Controller
      */
     public function edit($id)
     {
-        
+        //
     }
 
     /**
