@@ -20,13 +20,13 @@
                                   <div class="col-md-6">
                                     <div class="form-group">
                                       <label class="bmd-label-floating">Codigo Producto</label>
-                                    <input type="text" name="code" class="form-control" value="{{$products->code}}">
+                                    <input type="text" name="code" class="form-control" value="">
                                     </div>
                                   </div>
                                   <div class="col-md-6">
                                     <div class="form-group">
                                       <label class="bmd-label-floating">Nombre Producto</label>
-                                      <input type="text" name="name" class="form-control">
+                                    <input type="text" name="name" class="form-control" value="">
                                     </div>
                                   </div>
                                 </div>
@@ -46,9 +46,9 @@
                                         <div class="col-md-4">
                                           <div class="form-group">
                                            <select name="subcategorie_id"  class="form-control">
-                                                {{-- @foreach($subcategories as $category)
+                                               {{--  @foreach($subcategories as $category)
                                                   <option value="{{ $category->id_subcategorie }}">{{$category->name}}</option>
-                                                @endforeach --}}
+                                                @endforeach  --}}
                                             </select>                                            
                                           </div>
                                         </div>                                        

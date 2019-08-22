@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Categorie;
 use App\Product;
 use App\SubCategorie;
 use Illuminate\Http\Request;
@@ -122,7 +123,9 @@ class ProductController extends Controller
 
     public function list(){
         $products = Product::get();
-        return view('admin.listaProductos', compact('products'));
+        $categorie = Categorie::all();
+        $subcategories = SubCategorie::all(); 
+        return view('admin.listaProductos', compact('products','subcategories','categorie'));
     }
 
     /**
