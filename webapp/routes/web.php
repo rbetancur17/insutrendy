@@ -19,8 +19,15 @@ Route::get('/home', function () {
 
 //Route::get('begin','Auth\LoginController@index')->name('logeo');
 //Route::post('login','Auth\LoginController@ingreso')->name('login');
+
 Route::get('auth/login', 'Auth\LoginController@ShowLogin')->name('Showlogin');
 Route::post('auth/login', 'Auth\LoginController@Login')->name('login');
+
+Route::get('register', function () {
+    return view('auth.register');
+});
+
+Route::post('registered', 'Auth\TokenAuthController@signup')->name('registered');
 
 Route::get('home','HomeController@index')->name('home');
 Route::get('productPage/{idcategorie}','ProductPage@show')->name('pageproducts');

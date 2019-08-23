@@ -17,8 +17,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table = "insutrendy.users";
     protected $fillable = [
-        'name', 'email', 'password',
+        'name','phone','email','country','city','bussinesstype','company','password',
     ];
 
     protected $dates = ['created_at', 'updated_at'];

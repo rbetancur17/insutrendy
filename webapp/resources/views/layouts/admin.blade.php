@@ -32,7 +32,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="{{ route('homeAdmin') }}" class="simple-text logo-normal">
           Insutrendy
         </a>
       </div>

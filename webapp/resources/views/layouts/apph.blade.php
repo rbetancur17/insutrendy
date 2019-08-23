@@ -59,10 +59,17 @@
 					<div class="col-xl-4 col-lg-5">
                         <br><br>
 						<div class="user-panel">
+							@if(!empty($user))
+							<div class="up-item">
+									<i class="flaticon-profile" style="color:#ffc107"></i>
+									<a href="" style="color:#ffc107">{{$user->name}}</a>
+								</div>
+							@else
 							<div class="up-item">
 								<i class="flaticon-profile" style="color:#ffc107"></i>
-								<a href="{{ route('Showlogin') }}" style="color:#ffc107">Ingresa</a>
+								<a href="{{ route('Showlogin') }}" style="color:#ffc107">Ingresa</a> <span style="color:#ffc107">||</span> <a href="{{ route('register') }}" style="color:#ffc107">Registrate</a>
 							</div>
+							@endif
 							{{-- <div class="up-item">
 								<div class="shopping-card">
 									<i class="flaticon-bag"></i>

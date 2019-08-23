@@ -97,7 +97,7 @@
                                 </div>                                
 
                                 <button type="submit" class="btn btn-primary pull-right">Guardar</button>
-                                <a href="{{ route('lista') }}" class="btn btn-info">Listado de Productos</a>
+                                
                                 <div class="clearfix"></div>
                                 @if(session()->has('message'))
                                     <div class="alert alert-success">
