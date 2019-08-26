@@ -7,7 +7,7 @@
 	<meta name="keywords" content="Insutrendy, eCommerce, creative, Moda">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+	<link href="img/logoFinale.ico" rel="shortcut icon"/>
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
@@ -46,14 +46,14 @@
 					<div class="col-lg-2 text-center text-lg-left">
 						<!-- logo -->
 						<a href="{{ route('home') }}" class="site-logo">
-							<img src="{{ asset('img/logoNew.png') }}" alt="">
+							<img src="{{ asset('img/logoFinale.png') }}" alt="">
 						</a>
 					</div>
 					<div class="col-xl-6 col-lg-5">
                         <br><br>
 						<form class="header-search-form">
-							<input type="text" placeholder="Busca en Insutrendy ...." style="border:0.2em solid #ffc107">
-							<button><i class="flaticon-search" style="color: #ffc107"></i></button>
+							<input type="text" placeholder="Busca en Insutrendy ...." style="border:0.2em solid #f8d881">
+							<button><i class="flaticon-search" style="color: #f8d881"></i></button>
 						</form>
 					</div>
 					<div class="col-xl-4 col-lg-5">
@@ -62,12 +62,12 @@
 							@if(!empty($user))
 							<div class="up-item">
 									<i class="flaticon-profile" style="color:#ffc107"></i>
-									<a href="" style="color:#ffc107">{{$user->name}}</a>
+									<a href="" style="color:#f8d881">{{$user->name}}</a>
 								</div>
 							@else
 							<div class="up-item">
-								<i class="flaticon-profile" style="color:#ffc107"></i>
-								<a href="{{ route('Showlogin') }}" style="color:#ffc107">Ingresa</a> <span style="color:#ffc107">||</span> <a href="{{ route('register') }}" style="color:#ffc107">Registrate</a>
+								<i class="flaticon-profile" style="color:#000"></i>
+								<a href="{{ route('Showlogin') }}" style="color:#000">Ingresa</a> <span style="color:#000">||</span> <a href="{{ route('register') }}" style="color:#000">Registrate</a>
 							</div>
 							@endif
 							{{-- <div class="up-item">
@@ -123,7 +123,7 @@
 						<h2>About</h2>
                         <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam frin-gilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
                         <a href="{{ route('Showlogin') }}">Admin Zone</a>
-						<img src="img/cards.png" alt="">
+						
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
@@ -199,7 +199,7 @@
 				</div>
 
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> 
-<p class="text-white text-center mt-5">Copyright &copy;<script>document.write(new Date().getFullYear());</script> QuarksIT <i class="fa fa-heart-o" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank"></a></p>
+<p class="text-white text-center mt-5">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Insutrendy <i class="fa fa-heart-o" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank"></a></p>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
 			</div>

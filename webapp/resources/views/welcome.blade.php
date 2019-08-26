@@ -70,7 +70,7 @@
 						<div class="feature-icon">
 							<img src="img/icons/2.png" alt="#">
 						</div>
-						<h2>Asesoria de Compra</h2>
+						<h2 style="color:#000">Asesoria de Compra</h2>
 					</div>
 				</div>
 				<div class="col-md-4 p-0 feature">
