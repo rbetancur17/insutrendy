@@ -45,6 +45,12 @@ class CategoryController extends Controller
         return redirect()->back()->with('message', 'Categoría almacenada con éxito');
     }
 
+    public function listCategory()
+    {
+        $categorie = Categorie::all();
+        return view('admin.listCategories', compact('categorie'));
+    }
+
     /**
      * Display the specified resource.
      *

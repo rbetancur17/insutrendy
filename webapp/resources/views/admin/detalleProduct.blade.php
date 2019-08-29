@@ -9,6 +9,7 @@
             <div class="col-12 col-sm-12 col-md-12 col-xl-12">
                 <form action="" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
+                    @foreach ($products as $product)
                     <div class="card">
                             <div class="card-header card-header-primary">
                               <h4 class="card-title">Productos</h4>
@@ -20,13 +21,13 @@
                                   <div class="col-md-6">
                                     <div class="form-group">
                                       <label class="bmd-label-floating">Codigo Producto</label>
-                                    <input type="text" name="code" class="form-control" value="">
+                                    <input type="text" name="code" class="form-control" value="{{$product->code}}">
                                     </div>
                                   </div>
                                   <div class="col-md-6">
                                     <div class="form-group">
                                       <label class="bmd-label-floating">Nombre Producto</label>
-                                    <input type="text" name="name" class="form-control" value="">
+                                    <input type="text" name="name" class="form-control" value="{{$product->name}}">
                                     </div>
                                   </div>
                                 </div>
@@ -35,7 +36,7 @@
                                         <div class="col-md-6">
                                           <div class="form-group">
                                             <label class="bmd-label-floating">Precio Producto</label>
-                                            <input type="text" name="price" class="form-control">
+                                          <input type="text" name="price" class="form-control" value="{{$product->price}}">
                                           </div>
                                         </div>
                                         <div class="col-md-2">
@@ -60,7 +61,9 @@
                                       <label>Descripción</label>
                                       <div class="form-group">
                                         <label class="bmd-label-floating"> </label>
-                                        <textarea name="description" class="form-control" rows="2"></textarea>
+                                        <textarea name="description" class="form-control" rows="2">
+                                          {{$product->description}}
+                                        </textarea>
                                       </div>
                                     </div>
                                   </div>
@@ -107,6 +110,7 @@
                               </form>
                             </div>
                           </div>
+                          @endforeach
                     </form>
             </div>
         </div>

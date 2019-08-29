@@ -61,6 +61,7 @@
                                 </div>
 
                                 <button type="submit" class="btn btn-primary pull-right">Guardar</button>
+                                <a href="" class="btn btn-warning">Listado de SubCategorias</a>
                                 <div class="clearfix"></div>
                                 @if(session()->has('message'))
                                     <div class="alert alert-success">
