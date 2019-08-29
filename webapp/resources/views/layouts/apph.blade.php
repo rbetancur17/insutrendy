@@ -38,6 +38,21 @@
 		<div class="loader"></div>
 	</div>
 
+	<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+	s1.async=true;
+	s1.src='https://embed.tawk.to/5d56054177aa790be32f1e4a/default';
+	s1.charset='UTF-8';
+	s1.setAttribute('crossorigin','*');
+	s0.parentNode.insertBefore(s1,s0);
+	})();
+	</script>
+	<!--End of Tawk.to Script-->
+
+	
 	<!-- Header section -->
 	<header class="header-section">
 		<div class="header-top">
@@ -46,18 +61,18 @@
 					<div class="col-lg-2 text-center text-lg-left">
 						<!-- logo -->
 						<a href="{{ route('home') }}" class="site-logo">
-							<img src="{{ asset('img/logoFinale.png') }}" alt="">
+							<img src="{{ asset('img/logo180.png') }}" alt="">
 						</a>
 					</div>
 					<div class="col-xl-6 col-lg-5">
-                        <br><br>
+                    
 						<form class="header-search-form">
-							<input type="text" placeholder="Busca en Insutrendy ...." style="border:0.2em solid #f8d881">
+							<input type="text" placeholder="Busca lo nuevo de la temporada" style="border:0.2em solid #f8d881">
 							<button><i class="flaticon-search" style="color: #f8d881"></i></button>
 						</form>
 					</div>
 					<div class="col-xl-4 col-lg-5">
-                        <br><br>
+                      
 						<div class="user-panel">
 							@if(!empty($user))
 							<div class="up-item">
@@ -115,26 +130,25 @@
     <section class="footer-section">
 		<div class="container">
 			<div class="footer-logo text-center">
-				<a href="index.html"><img src="{{ asset('img/logo_trans.png') }}" alt=""></a>
+				<a href="index.html"><img src="{{ asset('img/logo160.png') }}" alt=""></a>
 			</div>
 			<div class="row">
-				<div class="col-lg-3 col-sm-6">
+				<div class="col-lg-6 col-sm-6">
 					<div class="footer-widget about-widget">
-						<h2>About</h2>
-                        <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam frin-gilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
-                        <a href="{{ route('Showlogin') }}">Admin Zone</a>
+						<h2>Quieres Saber los Ultimos Productos en Tendencia?</h2>
+                        <form action="">
+							<div class="form-group">
+								<label for="" class="text-white">Subscribirse:</label>
+								<label for="" class="text-white">Lo que deseas, Nosotros te ayudamos</label>
+								<input type="email" name="" id="" class="form-control" placeholder="Email">
+								<small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
+								<br>
+								<button type="submit" class="btn btn-warning">Enviar</button>
+							</div>
+						</form>
 						
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="footer-widget about-widget">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="">Sobre Nosotros</a></li>
-							<li><a href="">Zapatos y Bolsos </a></li>
-							<li><a href="">Vestuario</a></li>
-							<li><a href="">Contacto</a></li>
-						</ul>
+						<a href="#" class="text-white">Condiciones de Uso</a>	
+						
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
@@ -146,7 +160,7 @@
 								<div class="lp-content">
 									<h6>what shoes to wear</h6>
 									<span>Oct 21, 2018</span>
-									<a href="#" class="readmore">Read More</a>
+									<a href="#" class="readmore">Leer Más</a>
 								</div>
 							</div>
 							<div class="lp-item">
@@ -154,7 +168,7 @@
 								<div class="lp-content">
 									<h6>trends this year</h6>
 									<span>Oct 21, 2018</span>
-									<a href="#" class="readmore">Read More</a>
+									<a href="#" class="readmore">Leer Más</a>
 								</div>
 							</div>
 						</div>
@@ -164,19 +178,19 @@
 					<div class="footer-widget contact-widget">
 						<h2>Ubicación</h2>
 						<div class="con-info">
-							<span>C.</span>
+							<span></span>
 							<p>Insutrendy Global Trade </p>
 						</div>
 						<div class="con-info">
-							<span>D.</span>
+							<span></span>
 							<p>Room 1309, Block 9, Aoyuandi Distric, Panyu district, Guangzhou C. </p>
 						</div>
 						<div class="con-info">
-							<span>T.</span>
+							<span></span>
 							<p>020-84506572</p>
 						</div>
 						<div class="con-info">
-							<span>E.</span>
+							<span></span>
 							<p>office@youremail.com</p>
 						</div>
 					</div>
