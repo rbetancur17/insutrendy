@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Product;
 use App\Categorie;
-use App\SubCategorie;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\SubCategorie;
 
-class SubCategoryController extends Controller
+class SubCategorieDetail extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,7 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        $categories = Categorie::all();
-        return view('admin.subcategory', compact('categories') );
+        //
     }
 
     /**
@@ -39,21 +37,7 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $subcategory = new SubCategorie();
-        $subcategory->code = $request->input('code');
-        $subcategory->name = $request->input('name');
-        $subcategory->id_categorie = $request->input('categorie_id');
-        $subcategory->description = $request->input('description');
-        $subcategory->save();
-        return redirect()->back()->with('message', 'SubCategoria almacenada con éxito');
-    }
-
-    public function listSubCategory()
-    {
-        $categorie = Categorie::all();
-        $subcategorie = SubCategorie::all();
-        return view('admin.listSubCategories', compact('subcategorie'));
+        //
     }
 
     /**
@@ -64,7 +48,9 @@ class SubCategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Categorie::all();
+        $subcategorie = SubCategorie::where('id_subcategorie',$id)->get(); 
+        return view('admin.detailSubCategory',compact('subcategorie','category'));
     }
 
     /**
@@ -100,6 +86,4 @@ class SubCategoryController extends Controller
     {
         //
     }
-
-
 }
