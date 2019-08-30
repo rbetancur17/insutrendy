@@ -56,6 +56,8 @@ Route::post('categorycreate','admin\CategoryController@store')->name('categorycr
 Route::get('categorylist','admin\CategoryController@listCategory')->name('listcategorie');
 Route::get('categoryDetail/{idcategory}','admin\categorieDetail@show')->name('DetailCategorie');
 Route::post('subcategoriecreate','admin\SubCategoryController@store')->name('subcategoriecreate');
+Route::get('subcategorylist','admin\SubCategoryController@listSubCategory')->name('listsubCategorie');
+Route::get('subcategoryDetail/{idsubcategory}','admin\SubCategorieDetail@show')->name('DetailSubcategory');
 Route::post('productcreate','admin\ProductController@store')->name('productcreate');
 Route::get('list','admin\ProductController@list')->name('lista');
 Route::get('edit/{id}','admin\ProductController@edit')->name('editar');
