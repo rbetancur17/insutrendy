@@ -48,10 +48,10 @@ class DetalleProducto extends Controller
      */
     public function show($id)
     {
-        $products = Product::where('id_product',$id)->get();
+        $prod = Product::find($id);
         $categorie = Categorie::all(); 
         $subcategorie = SubCategorie::all(); 
-        return view('detalleProducto',compact('products','categorie','subcategorie') );
+        return view('detalleProducto',compact('prod','categorie','subcategorie') );
     }
 
     /**

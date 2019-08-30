@@ -41,7 +41,7 @@
                                       <div class="form-group">
                                        <select name="categorie_id"  class="form-control">
                                             @foreach($categories as $category)
-                                              <option value="{{ $category->id_categorie }}">{{$category->name}}</option>
+                                              <option value="{{ $category->id }}">{{$category->name}}</option>
                                             @endforeach
                                         </select>                                            
                                       </div>

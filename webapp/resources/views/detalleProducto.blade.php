@@ -37,7 +37,6 @@ s0.parentNode.insertBefore(s1,s0);
 				<a href="{{ route('home') }}"> &lt;&lt; Volver a la Categoria</a>
 			</div>
 			<div class="row">
-				@foreach($products as $prod)
 					<div class="col-lg-6">
 						<div class="product-pic-zoom">
 							<img class="product-big-img" src="{{asset('/img/product/'.$prod->image)}}" alt="">
@@ -66,7 +65,7 @@ s0.parentNode.insertBefore(s1,s0);
 					<div class="col-lg-6 product-details">
 						<h2 class="p-title">{{$prod->name}}</h2>
 						<h3 class="p-price">{{number_format($prod->price)}}</h3>
-						<a href="{{route('quotation',[$prod->id_product])}}" class="btn btn-warning btn-lg">Cotizar</a>
+						<a href="{{route('quotation',[$prod->id])}}" class="btn btn-warning btn-lg">Cotizar</a>
 						<div id="accordion" class="accordion-area">
 							<div class="panel">
 								<div class="panel-header" id="headingOne">
@@ -100,7 +99,6 @@ s0.parentNode.insertBefore(s1,s0);
 							<a href=""><i class="fa fa-youtube"></i></a>
 						</div>
 					</div>
-				@endforeach
 			</div>
 		</div>
 	</section>

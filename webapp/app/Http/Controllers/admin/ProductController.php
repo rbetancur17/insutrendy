@@ -136,8 +136,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $products = Product::where('id_product',$id)->get();
-        return view('admin.detalleProduct',compact('products'));
+        $product = Product::find($id);
+        $subcategories = SubCategorie::all();
+        return view('admin.detalleProduct',compact('product','subcategories'));
     }
 
     /**
@@ -149,7 +150,15 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->code = $request->input('code');
+        $product->name = $request->input('name');
+        $product->price = $request->input('price');
+        $product->id_subcategorie = $request->input('subcategorie_id');
+        $product->description = $request->input('description');
+        $product->save();
+        return redirect()->back()->with('message', 'Producto almacenada con éxito');
+
     }
 
     /**

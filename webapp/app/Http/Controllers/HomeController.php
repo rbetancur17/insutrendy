@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\Categorie;
 use App\SubCategorie;
@@ -20,7 +21,11 @@ class HomeController extends Controller
         $products = Product::all();
         $categorie = Categorie::all(); 
         $subcategorie = SubCategorie::all(); 
-        return view('welcome', compact('products','categorie','subcategorie') );
+        $user = null;
+        if(Auth::check()){
+            $user = Auth::user();
+        }        
+        return view('welcome', compact('products','categorie','subcategorie','user') );
     }
 
     /**

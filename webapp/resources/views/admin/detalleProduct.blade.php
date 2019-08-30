@@ -7,9 +7,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-xl-12">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{route('updateproduct',$product->id)}}" 
+                  method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
-                    @foreach ($products as $product)
                     <div class="card">
                             <div class="card-header card-header-primary">
                               <h4 class="card-title">Productos</h4>
@@ -41,19 +41,20 @@
                                         </div>
                                         <div class="col-md-2">
                                           <div class="form-group">
-                                            <label class="bmd-label-floating">Categoría:</label>
+                                            <label class="bmd-label-floating">SubCategoría:</label>
                                           </div>
                                         </div>
                                         <div class="col-md-4">
                                           <div class="form-group">
                                            <select name="subcategorie_id"  class="form-control">
-                                               {{--  @foreach($subcategories as $category)
-                                                  <option value="{{ $category->id_subcategorie }}">{{$category->name}}</option>
-                                                @endforeach  --}}
+                                               @foreach($subcategories as $category)
+                                                  <option value="{{ $category->id }}">{{$category->name}}</option>
+                                                @endforeach 
                                             </select>                                            
                                           </div>
                                         </div>                                        
                                 </div>
+
 
                                 <div class="row">
                                   <div class="col-md-12">
@@ -110,7 +111,6 @@
                               </form>
                             </div>
                           </div>
-                          @endforeach
                     </form>
             </div>
         </div>

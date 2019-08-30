@@ -35,7 +35,7 @@
 									<div class="pi-text">
 										<h6>{{number_format($prod->price)}}</h6>
 										<p>{{$prod->name}}</p>
-                						<a href="{{ route('productDetail',[$prod->id_product]) }}" class="btn btn-warning">Solicitar Información</a>
+                						<a href="{{ route('productDetail',[$prod->id]) }}" class="btn btn-warning">Solicitar Información</a>
 									</div>
 								</div>
 							</div>						

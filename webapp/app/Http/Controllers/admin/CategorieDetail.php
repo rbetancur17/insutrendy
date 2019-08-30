@@ -47,7 +47,7 @@ class CategorieDetail extends Controller
      */
     public function show($id)
     {
-        $categorie = Categorie::where('id_categorie',$id)->get(); 
+        $categorie = Categorie::find($id); 
         return view('admin.detailCategory',compact('categorie'));
     }
 

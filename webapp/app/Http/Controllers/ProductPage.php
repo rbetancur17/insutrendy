@@ -55,7 +55,7 @@ class ProductPage extends Controller
      */
     public function show($id)
     {
-        $products = Product::where('id_product',$id)->get();
+        $products = Product::where('id_subcategorie',$id)->get();
         $categorie = Categorie::all(); 
         $subcategorie = SubCategorie::all(); 
         return view('productPage',compact('products','categorie','subcategorie') );

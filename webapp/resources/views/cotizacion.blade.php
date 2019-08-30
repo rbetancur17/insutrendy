@@ -53,9 +53,8 @@
 									</tr>
 								</thead>
 								<tbody>
-									@foreach($products as $prod)
 									<tr>
-										<input type="hidden" value="{{$prod->id_product}}" name="id_product">
+										<input type="hidden" value="{{$prod->id}}" name="id_product">
 										<td class="product-col">
 											<img src="img/product/boton1.jpg" alt="">
 											<div class="pc-title">
@@ -71,7 +70,6 @@
 	                    					</div>
 										</td>
 									</tr>
-									@endforeach
 								</tbody>
 							</table>
 							</div>

@@ -39,7 +39,7 @@ class CotizacionProducto extends Controller
      */
     public function store(Request $request)
     {
-        $product = Product::where('id_product',$request->input('id_product'))->get();
+        $prod = Product::find($request->input('id_product'));
         $categorie = Categorie::all(); 
         $subcategorie = SubCategorie::all(); 
         $nombreCliente = $request->input('nombre');
@@ -47,7 +47,7 @@ class CotizacionProducto extends Controller
         $movilCliente = $request->input('movil');
         $cantidad = $request->input('cantidad');
         try{
-            Mail::send('emails.quotation', compact('product','nombreCliente','emailCliente','movilCliente','cantidad'), function($mail) use($product,$nombreCliente,$emailCliente,$movilCliente,$cantidad){
+            Mail::send('emails.quotation', compact('prod','nombreCliente','emailCliente','movilCliente','cantidad'), function($mail) use($prod,$nombreCliente,$emailCliente,$movilCliente,$cantidad){
                 $mail->subject("Cotización de producto");
                 $mail->to("stiven.betancur@gmail.com");
                 $mail->from( "info@insutrendy.com","Insutrendy" );
@@ -66,10 +66,10 @@ class CotizacionProducto extends Controller
      */
     public function show($id)
     {
-        $products = Product::where('id_product',$id)->get();
+        $prod = Product::find($id);
         $categorie = Categorie::all(); 
         $subcategorie = SubCategorie::all(); 
-        return view('cotizacion',compact('products','categorie','subcategorie') );
+        return view('cotizacion',compact('prod','categorie','subcategorie') );
     }
 
     /**

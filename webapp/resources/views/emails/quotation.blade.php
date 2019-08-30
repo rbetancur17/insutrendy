@@ -18,12 +18,11 @@
 
 	<br>
 	<div>
-		@foreach($product as $prod)	
-			<div><strong>Producto:</strong>  		  {{$prod->name}}</div>
-			<div><strong>Código:</strong>  		  	  {{$prod->code}}</div>
-			<div><strong>Precio:</strong>  		      {{$prod->price}}</div>
-			<div><strong>Cantidad:</strong>		      {{$cantidad}}</div>
-		@endforeach	
+
+		<div><strong>Producto:</strong>  		  {{$prod->name}}</div>
+		<div><strong>Código:</strong>  		  	  {{$prod->code}}</div>
+		<div><strong>Precio:</strong>  		      {{$prod->price}}</div>
+		<div><strong>Cantidad:</strong>		      {{$cantidad}}</div>
 
 		<br>
 		

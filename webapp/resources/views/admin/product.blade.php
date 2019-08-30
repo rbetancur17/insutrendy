@@ -40,14 +40,14 @@
                                         </div>
                                         <div class="col-md-2">
                                           <div class="form-group">
-                                            <label class="bmd-label-floating">Categoría:</label>
+                                            <label class="bmd-label-floating">SubCategoría:</label>
                                           </div>
                                         </div>
                                         <div class="col-md-4">
                                           <div class="form-group">
                                            <select name="subcategorie_id"  class="form-control">
                                                 @foreach($subcategories as $category)
-                                                  <option value="{{ $category->id_subcategorie }}">{{$category->name}}</option>
+                                                  <option value="{{ $category->id }}">{{$category->name}}</option>
                                                 @endforeach
                                             </select>                                            
                                           </div>

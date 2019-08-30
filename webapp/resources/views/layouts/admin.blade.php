@@ -96,7 +96,10 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="{{ route('home') }}">Log out</a>
+                  <a class="dropdown-item" onclick="document.getElementById('logoutForm').submit()">Log out</a>
+                   <form method="POST" style="display: none;" id="logoutForm" action="{{route('logout')}}">
+                       @csrf
+                   </form>                  
                 </div>
               </li>
             </ul>

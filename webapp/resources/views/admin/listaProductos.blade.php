@@ -42,7 +42,7 @@
                                 <td><img src="{{ asset('img/product/'.($product->image2)) }}" class="w-25" alt=""></td>
                                 <td><img src="{{ asset('img/product/'.($product->image3)) }}" class="w-25" alt=""></td>
                                 <td><img src="{{ asset('img/product/'.($product->image4)) }}" class="w-25" alt=""></td>
-                                <td><a href="{{ route('editar', ['id'=>$product->id_product]) }}" class="btn btn-success btn-sm">Editar</a></td>
+                                <td><a href="{{ route('editar', ['id'=>$product->id ]) }}" class="btn btn-success btn-sm">Editar</a></td>
                                 <td><a href="" class="btn btn-danger btn-sm">Desactivar</a></td>
                             </tr>
                             @endforeach
