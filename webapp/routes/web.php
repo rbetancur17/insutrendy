@@ -12,6 +12,7 @@
 */
 
 use App\Http\Controllers\ProductPage;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/home', function () {
     return view('welcome');
@@ -51,6 +52,8 @@ Route::get('category','admin\CategoryController@index')->name('adminCategory');
 Route::get('subcategory','admin\SubCategoryController@index')->name('adminSubCategory');
 Route::get('product','admin\ProductController@index')->name('adminProduct');
 Route::post('categorycreate','admin\CategoryController@store')->name('categorycreate');
+Route::get('categorylist','admin\CategoryController@listCategory')->name('listcategorie');
+Route::get('categoryDetail/{idcategory}','admin\categorieDetail@show')->name('DetailCategorie');
 Route::post('subcategoriecreate','admin\SubCategoryController@store')->name('subcategoriecreate');
 Route::post('productcreate','admin\ProductController@store')->name('productcreate');
 Route::get('list','admin\ProductController@list')->name('lista');

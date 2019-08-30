@@ -9,6 +9,7 @@
             <div class="col-12 col-sm-12 col-md-12 col-xl-12">
                 <form action="{{route('categorycreate')}}" method="post">
                     {{ csrf_field() }}
+                    @foreach ($categorie as $categories)
                     <div class="card">
                             <div class="card-header card-header-primary">
                               <h4 class="card-title">Categorias Producto</h4>
@@ -20,13 +21,13 @@
                                   <div class="col-md-6">
                                     <div class="form-group">
                                       <label class="bmd-label-floating">Codigo Categoria</label>
-                                      <input type="text" name="code" class="form-control">
+                                    <input type="text" name="code" class="form-control" value="{{$categories->code}}">
                                     </div>
                                   </div>
                                   <div class="col-md-6">
                                     <div class="form-group">
                                       <label class="bmd-label-floating">Nombre Categoria</label>
-                                      <input type="text" name="name" class="form-control">
+                                    <input type="text" name="name" class="form-control" value="{{$categories->name}}">
                                     </div>
                                   </div>
                                 </div>
@@ -36,13 +37,15 @@
                                       <label>Descripción</label>
                                       <div class="form-group">
                                         <label class="bmd-label-floating"> </label>
-                                        <textarea name="description" class="form-control" rows="5"></textarea>
+                                        <textarea name="description" class="form-control" rows="5">
+                                            {{$categories->description}}
+                                        </textarea>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary pull-right">Guardar</button>
-                                <a href="{{ route('listcategorie') }}" class="btn btn-success">Listado de Categorias</a>
+                                
                                 <div class="clearfix"></div>
                                 @if(session()->has('message'))
                                     <div class="alert alert-success">
@@ -52,6 +55,7 @@
                               </form>
                             </div>
                           </div>
+                    @endforeach
                     </form>
             </div>
         </div>
