@@ -35,7 +35,13 @@ class LoginController extends Controller
 
 
     if(Auth::attempt($credentials)){
-        return redirect()->intended('/dashboard');
+        
+        if(Auth()->user()->admin == 1 ){
+            return redirect()->intended('/dashboard');
+        }else{
+            return redirect()->intended('/home');
+        }
+
     }
 
     return back()
