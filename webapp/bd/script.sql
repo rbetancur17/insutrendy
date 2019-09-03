@@ -1,20 +1,5 @@
--- --------------------------------------------------------
--- Host:                         localhost
--- Versión del servidor:         5.7.19 - MySQL Community Server (GPL)
--- SO del servidor:              Win64
--- HeidiSQL Versión:             9.4.0.5125
--- --------------------------------------------------------
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Volcando estructura de base de datos para insutrendy
-CREATE DATABASE IF NOT EXISTS `insutrendy` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `insutrendy`;
 
 -- Volcando estructura para tabla insutrendy.categories
 CREATE TABLE IF NOT EXISTS `categories` (
@@ -58,6 +43,41 @@ DELETE FROM `migrations`;
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 
 -- Volcando estructura para tabla insutrendy.products
+
+
+-- Volcando estructura para tabla insutrendy.subcategories
+CREATE TABLE IF NOT EXISTS `subcategories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL DEFAULT '0',
+  `description` varchar(100) NOT NULL DEFAULT '0',
+  `id_categorie` int(11) NOT NULL DEFAULT '0',
+  `code` varchar(50) DEFAULT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `deleted_at` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_subcategories_categories` (`id_categorie`),
+  CONSTRAINT `FK_subcategories_categories` FOREIGN KEY (`id_categorie`) REFERENCES `categories` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+-- Volcando datos para la tabla insutrendy.subcategories: ~9 rows (aproximadamente)
+DELETE FROM `subcategories`;
+/*!40000 ALTER TABLE `subcategories` DISABLE KEYS */;
+INSERT INTO `subcategories` (`id`, `name`, `description`, `id_categorie`, `code`, `created_at`, `updated_at`, `deleted_at`) VALUES
+	(1, 'Suelas', 'Suelas', 8, '001', '2019-08-16', '2019-08-16', NULL),
+	(2, 'Herrajes', 'Herrajes', 8, '002', '2019-08-16', '2019-08-16', NULL),
+	(3, 'Producto Terminado', 'Producto Terminado', 8, '003', '2019-08-16', '2019-08-16', NULL),
+	(4, 'Camiseta', 'Camiseta', 9, '005', '2019-08-16', '2019-08-16', NULL),
+	(5, 'Jeans', 'Jeans', 9, '006', '2019-08-16', '2019-08-16', NULL),
+	(6, 'Vestido', 'Vestido', 9, '007', '2019-08-16', '2019-08-16', NULL),
+	(7, 'Collares', 'collares', 10, '009', '2019-08-16', '2019-08-16', NULL),
+	(8, 'Aretes', 'Aretes', 10, '010', '2019-08-16', '2019-08-16', NULL),
+	(10, 'cuero de zaapato', 'zapato', 11, '011', '2019-08-16', '2019-08-16', NULL),
+	(11, 'sub camilo', 'prueba', 12, '012', '2019-08-20', '2019-08-20', NULL),
+	(12, 'Cambio de ID SUB', 'asdasdasd', 14, '20000', '2019-08-30', '2019-08-30', NULL);
+/*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
+
+
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(50) NOT NULL DEFAULT '0',
@@ -97,37 +117,7 @@ INSERT INTO `products` (`id`, `code`, `name`, `description`, `price`, `created_a
 	(17, '99999', 'Cambio de ID pro asdasdas', 'asdasdasdasd\r\n                                        asdasdasdasdasdasdasdasd', 50000000, '2019-08-30', 7, '2019-08-30', NULL, NULL, NULL, '99999-1717959_1_m.jpg', '99999-carrs.jpg', '99999-10.jpg', '99999-carrs.jpg');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 
--- Volcando estructura para tabla insutrendy.subcategories
-CREATE TABLE IF NOT EXISTS `subcategories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL DEFAULT '0',
-  `description` varchar(100) NOT NULL DEFAULT '0',
-  `id_categorie` int(11) NOT NULL DEFAULT '0',
-  `code` varchar(50) DEFAULT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
-  `deleted_at` date DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_subcategories_categories` (`id_categorie`),
-  CONSTRAINT `FK_subcategories_categories` FOREIGN KEY (`id_categorie`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla insutrendy.subcategories: ~9 rows (aproximadamente)
-DELETE FROM `subcategories`;
-/*!40000 ALTER TABLE `subcategories` DISABLE KEYS */;
-INSERT INTO `subcategories` (`id`, `name`, `description`, `id_categorie`, `code`, `created_at`, `updated_at`, `deleted_at`) VALUES
-	(1, 'Suelas', 'Suelas', 8, '001', '2019-08-16', '2019-08-16', NULL),
-	(2, 'Herrajes', 'Herrajes', 8, '002', '2019-08-16', '2019-08-16', NULL),
-	(3, 'Producto Terminado', 'Producto Terminado', 8, '003', '2019-08-16', '2019-08-16', NULL),
-	(4, 'Camiseta', 'Camiseta', 9, '005', '2019-08-16', '2019-08-16', NULL),
-	(5, 'Jeans', 'Jeans', 9, '006', '2019-08-16', '2019-08-16', NULL),
-	(6, 'Vestido', 'Vestido', 9, '007', '2019-08-16', '2019-08-16', NULL),
-	(7, 'Collares', 'collares', 10, '009', '2019-08-16', '2019-08-16', NULL),
-	(8, 'Aretes', 'Aretes', 10, '010', '2019-08-16', '2019-08-16', NULL),
-	(10, 'cuero de zaapato', 'zapato', 11, '011', '2019-08-16', '2019-08-16', NULL),
-	(11, 'sub camilo', 'prueba', 12, '012', '2019-08-20', '2019-08-20', NULL),
-	(12, 'Cambio de ID SUB', 'asdasdasd', 14, '20000', '2019-08-30', '2019-08-30', NULL);
-/*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
 
 -- Volcando estructura para tabla insutrendy.users
 CREATE TABLE IF NOT EXISTS `users` (

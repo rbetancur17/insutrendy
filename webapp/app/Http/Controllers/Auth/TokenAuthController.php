@@ -33,11 +33,21 @@ class TokenAuthController extends Controller
             'company' => ['required', 'string', 'max:25'],
             'password' => 'required|min:4|max:60',
             'password_confirmation' => 'required|same:password',
+            'admin' => ['required', 'string', 'max:5'],
         ], $Messages = []);
 
         try
         {
-            $user = new User($request->all());
+            $user = new User();
+            $user->name = $request->name;
+            $user->phone = $request->phone;
+            $user->email = $request->email;
+            $user->country = $request->country;
+            $user->city = $request->city;
+            $user->bussinesstype = $request->bussinesstype;
+            $user->company = $request->company;
+            $user->password = bcrypt($request->password); 
+            $user->admin = $request->admin;
  
             //$user->role = 'user';
             //$user->registration_token = str_random(60);
