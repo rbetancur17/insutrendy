@@ -51,6 +51,8 @@ Route::get('welcome','HomeController@index')->name('welcome');
 Route::get('dashboard','admin\Dashboard@index')->name('homeAdmin');
 Route::get('category','admin\CategoryController@index')->name('adminCategory');
 Route::get('subcategory','admin\SubCategoryController@index')->name('adminSubCategory');
+Route::get('ChildSubcategory','admin\SubCategoryChild@index')->name('childSubcategory');
+Route::get('listchild','admin\ListSubchild@index')->name('childList');
 Route::get('product','admin\ProductController@index')->name('adminProduct');
 Route::post('categorycreate','admin\CategoryController@store')->name('categorycreate');
 Route::get('categorylist','admin\CategoryController@listCategory')->name('listcategorie');
