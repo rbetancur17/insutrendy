@@ -21,7 +21,7 @@
                                 <th>Descripcion</th>
                                 <th>Nombre</th>
                                 <th>Estado</th>
-                                <th colspan="2" class="text-center">Acciones</th>
+                                <th colspan="3" class="text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,9 +30,27 @@
                                 <td>{{$categories->code}}</td>
                                 <td>{{$categories->description}}</td>
                                 <td>{{$categories->name}}</td>
-                                <td>{{$categories->status}}</td>
-                                <td class="text-center"><a href="{{ route('DetailCategorie', ['id'=>$categories->id_categorie]) }}" class="btn btn-info btn-sm center">Editar</a></td>
-                                <td class="text-center"><a href="" class="btn btn-danger btn-sm center">Desactivar</a></td>
+                                <td>
+                                    @switch($categories->status)
+                                    @case(1)
+                                        Activo
+                                    @break;
+                                    @case(2)
+                                        Inactivo
+                                    @break;
+                                    @endswitch
+                                </td>
+                                <td 
+                                    class="text-center"><a href="" class="btn btn-info btn-sm center">Activar</a>
+                                </td>    
+                                <td 
+                                    class="text-center"><a href="" class="btn btn-danger btn-sm center">Desactivar</a>
+                                </td>                                
+                                <td class="text-center">
+                                    <a href="{{route('categoryshow',$categories->id)}}"
+                                        class="btn btn-info btn-sm center">Editar</a>
+                                    </a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

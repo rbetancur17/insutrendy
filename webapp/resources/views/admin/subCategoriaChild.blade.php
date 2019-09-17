@@ -7,11 +7,11 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-xl-12">
-                <form action="{{route('subcategoriecreate')}}" method="post">
+                <form action="{{route('subcategoriecreatechild')}}" method="post">
                     {{ csrf_field() }}
                     <div class="card">
                             <div class="card-header card-header-primary">
-                              <h4 class="card-title">SubCategorias Hijas</h4>
+                              <h4 class="card-title">SubCategorias Nivel 2</h4>
                               <p class="card-category"></p>
                             </div>
                             <div class="card-body">
@@ -39,10 +39,10 @@
                                     </div>
                                     <div class="col-md-8">
                                       <div class="form-group">
-                                       <select name="categorie_id"  class="form-control">
-                                            {{-- @foreach($categories as $category)
-                                              <option value="{{ $category->id }}">{{$category->name}}</option>
-                                            @endforeach --}}
+                                       <select name="subcategorie_id"  class="form-control">
+                                            @foreach($subcategories as $subcategory)
+                                              <option value="{{ $subcategory->id }}">{{$subcategory->name}}</option>
+                                            @endforeach
                                         </select>                                            
                                       </div>
                                     </div>                                        

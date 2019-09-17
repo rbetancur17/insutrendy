@@ -53,13 +53,13 @@
           <li class="nav-item ">
             <a class="nav-link" href="{{ route('adminSubCategory') }}">
               <i class="material-icons">filter</i>
-              <p>SubCategorias</p>
+              <p>SubCategorias Nivel 1</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="{{ route('childSubcategory') }}">
               <i class="material-icons">filter</i>
-              <p>SubCategorias Hija</p>
+              <p>SubCategorias Nivel 2</p>
             </a>
           </li>            
           <li class="nav-item ">

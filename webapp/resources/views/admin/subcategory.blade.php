@@ -11,7 +11,7 @@
                     {{ csrf_field() }}
                     <div class="card">
                             <div class="card-header card-header-primary">
-                              <h4 class="card-title">SubCategorias</h4>
+                              <h4 class="card-title">SubCategorias Nivel 1</h4>
                               <p class="card-category"></p>
                             </div>
                             <div class="card-body">

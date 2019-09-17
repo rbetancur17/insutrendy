@@ -1,5 +1,20 @@
+-- --------------------------------------------------------
+-- Host:                         localhost
+-- Versión del servidor:         5.7.19 - MySQL Community Server (GPL)
+-- SO del servidor:              Win64
+-- HeidiSQL Versión:             9.4.0.5125
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
+-- Volcando estructura de base de datos para insutrendy
+CREATE DATABASE IF NOT EXISTS `insutrendy` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `insutrendy`;
 
 -- Volcando estructura para tabla insutrendy.categories
 CREATE TABLE IF NOT EXISTS `categories` (
@@ -12,21 +27,23 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `deleted_at` date DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla insutrendy.categories: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla insutrendy.categories: ~10 rows (aproximadamente)
 DELETE FROM `categories`;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
 INSERT INTO `categories` (`id`, `code`, `description`, `name`, `created_at`, `updated_at`, `deleted_at`, `status`) VALUES
-	(8, '001', 'Zapatos y Bolsos', 'Zapatos y Bolsos', '2019-08-16', '2019-08-16', NULL, NULL),
-	(9, '003', 'Vestuario', 'Vestuario', '2019-08-16', '2019-08-16', NULL, NULL),
-	(10, '002', 'Accesorios', 'Accesorios', '2019-08-16', '2019-08-16', NULL, NULL),
-	(11, '004', 'cuero', 'Cuero', '2019-08-16', '2019-08-16', NULL, NULL),
-	(12, '008', 'prueba', 'camilo', '2019-08-20', '2019-08-20', NULL, NULL),
-	(13, '001', 'Zapatos y Bolsos', 'Zapatos y Bolsos asd', '2019-08-30', '2019-08-30', NULL, NULL),
-	(14, '10000', 'Descripcitopjas', 'Cambio de ID', '2019-08-30', '2019-08-30', NULL, NULL),
-	(15, '44342', '42424', '442421', '2019-08-30', '2019-08-30', NULL, NULL),
-	(16, '057', 'asdasd', 'Categoria 1', '2019-08-30', '2019-08-30', NULL, NULL);
+	(8, '001', 'Zapatos y Bolsos\r\n                                       asdasdasd asdasdasd as dawd', 'Zapatos y Bolsos modiciado', '2019-08-16', '2019-09-17', NULL, 1),
+	(9, '003', 'Vestuario', 'Vestuario', '2019-08-16', '2019-08-16', NULL, 1),
+	(10, '002', 'Accesorios', 'Accesorios', '2019-08-16', '2019-08-16', NULL, 1),
+	(11, '004', 'cuero', 'Cuero', '2019-08-16', '2019-08-16', NULL, 1),
+	(12, '008', 'prueba', 'camilo', '2019-08-20', '2019-08-20', NULL, 1),
+	(13, '001', 'Zapatos y Bolsos', 'Zapatos y Bolsos asd', '2019-08-30', '2019-08-30', NULL, 1),
+	(14, '10000', 'Descripcitopjas', 'Cambio de ID', '2019-08-30', '2019-08-30', NULL, 1),
+	(15, '44342', '42424', '442421', '2019-08-30', '2019-08-30', NULL, 1),
+	(16, '057', 'asdasd', 'Categoria 1', '2019-08-30', '2019-08-30', NULL, 1),
+	(17, '44342', '42424', 'asdasdasdasdasd', '2019-09-17', '2019-09-17', NULL, NULL),
+	(18, '44342', '42424', 'asdasdasdasdfasdfasdfsadf', '2019-09-17', '2019-09-17', NULL, NULL);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 
 -- Volcando estructura para tabla insutrendy.migrations
@@ -43,7 +60,34 @@ DELETE FROM `migrations`;
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 
 -- Volcando estructura para tabla insutrendy.products
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(50) NOT NULL DEFAULT '0',
+  `name` varchar(200) DEFAULT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `created_at` date DEFAULT NULL,
+  `id_subcategorie_child` int(11) DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `deleted_at` date DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  `outstanding` varchar(50) DEFAULT NULL,
+  `image` varchar(500) DEFAULT NULL,
+  `image2` varchar(500) DEFAULT NULL,
+  `image3` varchar(500) DEFAULT NULL,
+  `image4` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_products_subcategories_child` (`id_subcategorie_child`),
+  CONSTRAINT `FK_products_subcategories_child` FOREIGN KEY (`id_subcategorie_child`) REFERENCES `subcategories_child` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
+-- Volcando datos para la tabla insutrendy.products: ~2 rows (aproximadamente)
+DELETE FROM `products`;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` (`id`, `code`, `name`, `description`, `price`, `created_at`, `id_subcategorie_child`, `updated_at`, `deleted_at`, `status`, `outstanding`, `image`, `image2`, `image3`, `image4`) VALUES
+	(18, '001', 'Producto 1', 'asdasdasd', 100000, '2019-09-17', 2, '2019-09-17', NULL, NULL, NULL, '001-DaringBasicDungbeetle-small.gif', '001-camiseta-hobbies-percha-g.jpg', '001-b09a5f221e61dcaadbd10d16080a1022.jpg', NULL),
+	(19, '097', 'Poroducto 2', 'asdasdasd', 500000000, '2019-09-17', 1, '2019-09-17', NULL, NULL, NULL, '097-cercade3.jpg', '097-derecha.jpg', '097-depositphotos_49376035-stock-photo-people-with-european-flags-on.jpg', '097-detrasde3.jpg');
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
 
 -- Volcando estructura para tabla insutrendy.subcategories
 CREATE TABLE IF NOT EXISTS `subcategories` (
@@ -60,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `subcategories` (
   CONSTRAINT `FK_subcategories_categories` FOREIGN KEY (`id_categorie`) REFERENCES `categories` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla insutrendy.subcategories: ~9 rows (aproximadamente)
+-- Volcando datos para la tabla insutrendy.subcategories: ~8 rows (aproximadamente)
 DELETE FROM `subcategories`;
 /*!40000 ALTER TABLE `subcategories` DISABLE KEYS */;
 INSERT INTO `subcategories` (`id`, `name`, `description`, `id_categorie`, `code`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -77,64 +121,52 @@ INSERT INTO `subcategories` (`id`, `name`, `description`, `id_categorie`, `code`
 	(12, 'Cambio de ID SUB', 'asdasdasd', 14, '20000', '2019-08-30', '2019-08-30', NULL);
 /*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
 
-
-CREATE TABLE IF NOT EXISTS `products` (
+-- Volcando estructura para tabla insutrendy.subcategories_child
+CREATE TABLE IF NOT EXISTS `subcategories_child` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(50) NOT NULL DEFAULT '0',
-  `name` varchar(200) DEFAULT NULL,
-  `description` varchar(200) DEFAULT NULL,
-  `price` int(11) DEFAULT NULL,
+  `name` varchar(100) NOT NULL DEFAULT '0',
+  `description` varchar(100) NOT NULL DEFAULT '0',
+  `id_subcategorie` int(11) NOT NULL DEFAULT '0',
+  `code` varchar(50) DEFAULT NULL,
   `created_at` date DEFAULT NULL,
-  `id_subcategorie` int(11) DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
   `deleted_at` date DEFAULT NULL,
-  `status` int(11) DEFAULT NULL,
-  `outstanding` varchar(50) DEFAULT NULL,
-  `image` varchar(500) DEFAULT NULL,
-  `image2` varchar(500) DEFAULT NULL,
-  `image3` varchar(500) DEFAULT NULL,
-  `image4` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_products_subcategories` (`id_subcategorie`),
-  CONSTRAINT `FK_products_subcategories` FOREIGN KEY (`id_subcategorie`) REFERENCES `subcategories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+  KEY `FK_subcategories_subcategorie` (`id_subcategorie`),
+  CONSTRAINT `FK_subcategories_subcategorie` FOREIGN KEY (`id_subcategorie`) REFERENCES `subcategories` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla insutrendy.products: ~11 rows (aproximadamente)
-DELETE FROM `products`;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` (`id`, `code`, `name`, `description`, `price`, `created_at`, `id_subcategorie`, `updated_at`, `deleted_at`, `status`, `outstanding`, `image`, `image2`, `image3`, `image4`) VALUES
-	(3, '1', 'Suela de zapato', 'Suela de producto', 10000, '2019-08-16', 1, '2019-08-16', NULL, NULL, NULL, 'product3.jpg', NULL, NULL, NULL),
-	(4, '02', 'Suela de zapato', 'suela de zapto', 5000, '2019-08-16', 1, '2019-08-16', NULL, NULL, NULL, 'boton3.jpg', NULL, NULL, NULL),
-	(5, '3', 'Herraje de collar', 'Herraje de collar', 1000, '2019-08-16', 2, '2019-08-16', NULL, NULL, NULL, 'boton1.jpg', NULL, NULL, NULL),
-	(9, '5', 'Camiseta china', 'Camiseta china', NULL, '2019-08-16', 4, '2019-08-16', NULL, NULL, NULL, '6.jpg', NULL, NULL, NULL),
-	(10, '6', 'Jeans chinos', 'Jeans chinos', 5000, '2019-08-16', 5, '2019-08-16', NULL, NULL, NULL, '7.jpg', NULL, NULL, NULL),
-	(11, '7', 'Vestido chino largo', 'Vestido chino largo', NULL, '2019-08-16', 6, '2019-08-16', NULL, NULL, NULL, '10.jpg', NULL, NULL, NULL),
-	(12, '9', 'Vestido rojo chino', 'Vestido rojo chino', 1000, '2019-08-16', 6, '2019-08-16', NULL, NULL, NULL, '4.jpg', NULL, NULL, NULL),
-	(13, '057', 'tela zapato cuero', NULL, 50000, '2019-08-16', 10, '2019-08-16', NULL, NULL, NULL, '3.jpg', NULL, NULL, NULL),
-	(14, '10', 'Camiseta china sport', 'f', 20000, '2019-08-17', 4, '2019-08-17', NULL, NULL, NULL, '10-5c4ef04a9c24a-483212-500x500.jpg', NULL, NULL, NULL),
-	(15, '11', 'Camiseta china futbol', 'Camiseta', 1000, '2019-08-17', 4, '2019-08-17', NULL, NULL, NULL, '11-5c4ef04a9c24a-483212-500x500.jpg', '11-camiseta-futbol-adidas-primera-equipacion-juventus-hombre-D_NQ_NP_973085-MLA29510380497_022019-Q.jpg', '11-camiseta-hobbies-percha-g.jpg', '11-descarga.jpg'),
-	(16, 'P001', 'Prod camilo', 'prueba', 100000, '2019-08-20', 11, '2019-08-20', NULL, NULL, NULL, 'P001-camiseta-hobbies-percha-g.jpg', 'P001-descarga.jpg', 'P001-DaringBasicDungbeetle-small.gif', 'P001-tenor.gif'),
-	(17, '99999', 'Cambio de ID pro asdasdas', 'asdasdasdasd\r\n                                        asdasdasdasdasdasdasdasd', 50000000, '2019-08-30', 7, '2019-08-30', NULL, NULL, NULL, '99999-1717959_1_m.jpg', '99999-carrs.jpg', '99999-10.jpg', '99999-carrs.jpg');
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
-
-
+-- Volcando datos para la tabla insutrendy.subcategories_child: ~2 rows (aproximadamente)
+DELETE FROM `subcategories_child`;
+/*!40000 ALTER TABLE `subcategories_child` DISABLE KEYS */;
+INSERT INTO `subcategories_child` (`id`, `name`, `description`, `id_subcategorie`, `code`, `created_at`, `updated_at`, `deleted_at`) VALUES
+	(1, 'Subcategoria Nive 2', 'asdasdasdasdad', 7, '00010', '2019-09-17', '2019-09-17', NULL),
+	(2, 'Nivel 2', 'deasdasdasd', 12, '45555', '2019-09-17', '2019-09-17', NULL);
+/*!40000 ALTER TABLE `subcategories_child` ENABLE KEYS */;
 
 -- Volcando estructura para tabla insutrendy.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL DEFAULT '0',
-  `last_name` varchar(100) NOT NULL DEFAULT '0',
-  `email` varchar(100) NOT NULL DEFAULT '0',
+  `name` varchar(100) NOT NULL,
+  `phone` varchar(45) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `country` varchar(60) NOT NULL,
+  `city` varchar(60) NOT NULL,
+  `bussinesstype` varchar(60) NOT NULL,
+  `company` varchar(60) NOT NULL,
   `password` varchar(100) NOT NULL DEFAULT '0',
+  `admin` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla insutrendy.users: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla insutrendy.users: ~2 rows (aproximadamente)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `password`) VALUES
-	(1, 'administrador', '0', 'admin@insutrendy.com', '$2y$10$euqXFwNkEL6GmI6/ElVuCOBz9CJJRknWAfDJJPZ4ZDq60CDYIb5RW');
+INSERT INTO `users` (`id`, `name`, `phone`, `email`, `country`, `city`, `bussinesstype`, `company`, `password`, `admin`) VALUES
+	(1, 'administrador', '', 'director@insutrendy.com', 'China', '', 'Clothes', 'Insutrendy', '$2y$10$euqXFwNkEL6GmI6/ElVuCOBz9CJJRknWAfDJJPZ4ZDq60CDYIb5RW', 1),
+	(5, 'Byron', '456', 'diseno@insutrendy.com', 'China', 'China', 'Fashion', 'Insutrendy', '$2y$10$DaHw9DqfriXvmJf1h3JKeOVPYRMwRoxRAsu0MUHW/t.tXXVPzraVS', 1),
+	(6, 'Prueba', '27588902', 'guineo20@gmail.com', 'Colombia', 'Medellin', 'Telas', 'Esta', '$2y$10$XivvtZk5nSBOOPL40PuE4u3fdTBeGKNrJTrQvxABUuEx8lnmD5OAC', 2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

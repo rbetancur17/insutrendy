@@ -5,6 +5,8 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
+use App\SubCategorie;
+use App\SubCategorieChild;
 
 class SubCategoryChild extends Controller
 {
@@ -14,8 +16,9 @@ class SubCategoryChild extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return View('admin.subCategoriaChild');
+    {   
+        $subcategories = SubCategorie::all();
+        return View('admin.subCategoriaChild', compact('subcategories') );
     }
 
     /**
@@ -36,7 +39,13 @@ class SubCategoryChild extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $subcategory = new SubCategorieChild();
+        $subcategory->code = $request->input('code');
+        $subcategory->name = $request->input('name');
+        $subcategory->id_subcategorie = $request->input('subcategorie_id');
+        $subcategory->description = $request->input('description');
+        $subcategory->save();
+        return redirect()->back()->with('message', 'SubCategoria Nivel 2 almacenada con éxito');
     }
 
     /**

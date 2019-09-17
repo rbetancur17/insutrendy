@@ -56,7 +56,11 @@ Route::get('listchild','admin\ListSubchild@index')->name('childList');
 Route::get('product','admin\ProductController@index')->name('adminProduct');
 Route::post('categorycreate','admin\CategoryController@store')->name('categorycreate');
 Route::get('categorylist','admin\CategoryController@listCategory')->name('listcategorie');
-Route::get('categoryDetail/{idcategory}','admin\categorieDetail@show')->name('DetailCategorie');
+
+Route::get('categoryshow/{id}','admin\CategorieDetail@show')->name('categoryshow');
+Route::post('categoryedit','admin\CategorieDetail@store')->name('categoryedit');
+
+
 Route::post('subcategoriecreate','admin\SubCategoryController@store')->name('subcategoriecreate');
 Route::get('subcategorylist','admin\SubCategoryController@listSubCategory')->name('listsubCategorie');
 Route::get('subcategoryDetail/{idsubcategory}','admin\SubCategorieDetail@show')->name('DetailSubcategory');
@@ -66,5 +70,8 @@ Route::get('edit/{id}','admin\ProductController@edit')->name('editar');
 Route::get('blog','admin\BlogController@index')->name('NewBlog');
 Route::post('post','admin\BlogController@store')->name('newpost');
 Route::post('updateproduct/{id}','Admin\ProductController@update')->name('updateproduct');
+
+Route::post('subcategoriecreatechild','admin\SubCategoryChild@store')->name('subcategoriecreatechild');
+
 
 

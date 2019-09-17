@@ -40,12 +40,12 @@
                                         </div>
                                         <div class="col-md-2">
                                           <div class="form-group">
-                                            <label class="bmd-label-floating">SubCategoría:</label>
+                                            <label class="bmd-label-floating">SubCategoría Nivel 2:</label>
                                           </div>
                                         </div>
                                         <div class="col-md-4">
                                           <div class="form-group">
-                                           <select name="subcategorie_id"  class="form-control">
+                                           <select name="subcategorie_child_id"  class="form-control">
                                                 @foreach($subcategories as $category)
                                                   <option value="{{ $category->id }}">{{$category->name}}</option>
                                                 @endforeach
@@ -84,13 +84,13 @@
                                 <div class="row">
                                   <div class="col-md-6">
                                     <div class="">
-                                      <label class="bmd-label-floating">Imagen 1</label>
+                                      <label class="bmd-label-floating">Imagen 3</label>
                                       <input type="file" name="image3" class="form-control">
                                     </div>
                                   </div>
                                   <div class="col-md-6">
                                     <div class="">
-                                        <label class="bmd-label-floating">Imagen 2</label>
+                                        <label class="bmd-label-floating">Imagen 4</label>
                                         <input type="file" name="image4" class="form-control">
                                     </div>
                                   </div>

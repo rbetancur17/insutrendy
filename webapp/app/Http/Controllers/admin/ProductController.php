@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Categorie;
 use App\Product;
-use App\SubCategorie;
+use App\SubCategorieChild;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -19,7 +19,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $subcategories = SubCategorie::all();
+        $subcategories = SubCategorieChild::all();
         return view('admin.product', compact('subcategories') );
     }
 
@@ -46,7 +46,7 @@ class ProductController extends Controller
         $product->code = $request->input('code');
         $product->name = $request->input('name');
         $product->price = $request->input('price');
-        $product->id_subcategorie = $request->input('subcategorie_id');
+        $product->id_subcategorie_child = $request->input('subcategorie_child_id');
         $product->description = $request->input('description');
 
         if($request->file('image1')!=null){

@@ -36,7 +36,13 @@ class CategorieDetail extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id = $request->input('id_categorie');
+        $categorie = Categorie::find($id);
+        $categorie->code = $request->input('code');
+        $categorie->name = $request->input('name');
+        $categorie->description = $request->input('description');
+        $categorie->save();
+        return redirect()->back()->with('message', 'Categoría actualizada con éxito');
     }
 
     /**
