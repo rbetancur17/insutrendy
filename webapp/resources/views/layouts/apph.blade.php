@@ -97,28 +97,40 @@
 				</div>
 			</div>
 		</div>
-		<nav class="main-navbar">
+		<div id="menu_area" class="menu-area">
 			<div class="container">
-				<!-- menu -->
-				<ul class="main-menu">
-					<li><a href="{{ route('home') }}">Inicio</a></li>
-					<li><a href="#">Sobre Nosotros</a></li>
-					@foreach($categorie as $categ)
-						<li><a href="#">{{$categ->name}}</a>
-							<ul class="sub-menu">
-								@foreach($subcategorie as $sub)	
-									@if ( $sub->id_categorie == $categ->id )
-										<li><a href="{{ route('pageproducts',[$sub->id]) }}">{{$sub->name}}</a></li>
-									@endif
-								@endforeach	
+				<div class="row">
+					<nav class="navbar navbar-light navbar-expand-lg mainmenu">
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav mr-auto">
+								<li><a href="{{ route('home') }}">Inicio</a></li>
+								<li class="dropdown">
+									<a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+									<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a href="#">Action</a></li>
+									<li><a href="#">Another action</a></li>
+									<li><a href="#">Something else here</a></li>
+									<li class="dropdown">
+										<a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown2</a>
+										<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										</ul>
+									</li>
+									</ul>
+								</li>
+								<li><a href="{{ route('BlogSite') }}">Blog</a></li>
+                    			<li><a href="{{ route('contacto') }}">Contacto</a></li>
 							</ul>
-	                    </li>
-					@endforeach	
-                    <li><a href="{{ route('BlogSite') }}">Blog</a></li>
-                    <li><a href="{{ route('contacto') }}">Contacto</a></li>
-				</ul>
+						</div>
+					</nav>
+				</div>
 			</div>
-		</nav>
+		</div>
 	</header>
 
     
@@ -235,6 +247,7 @@
 	<script src="{{ asset('js/main.js') }}"></script>
 	<script src="{{ asset('js/jquery.bxslider.min.js') }}"></script>
 	<script src="{{ asset('js/animate.js') }}"></script>
+
 
 	</body>
 </html>

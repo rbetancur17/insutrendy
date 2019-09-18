@@ -238,6 +238,8 @@ $('.form-file-simple .inputFileVisible').click(function() {
 
 
 
+
+
 	/*------------------
 		Single Product
 	--------------------*/
