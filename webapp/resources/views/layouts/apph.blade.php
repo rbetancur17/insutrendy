@@ -107,22 +107,35 @@
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="navbar-nav mr-auto">
 								<li><a href="{{ route('home') }}">Inicio</a></li>
-								<li class="dropdown">
-									<a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-									<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<li><a href="#">Action</a></li>
-									<li><a href="#">Another action</a></li>
-									<li><a href="#">Something else here</a></li>
-									<li class="dropdown">
-										<a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown2</a>
+								@foreach($categorie as $categ)
+									<li class="dropdown">									
+										<a class="dropdown-toggle" 
+											href="#" id="navbarDropdown" role="button" data-toggle="dropdown" 
+											aria-haspopup="true" aria-expanded="false">{{$categ->name}}
+										</a>
 										<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<li><a href="#">Action</a></li>
-										<li><a href="#">Another action</a></li>
-										<li><a href="#">Something else here</a></li>
-										</ul>
+										@foreach($subcategorie as $sub)	
+											@if ( $sub->id_categorie == $categ->id )
+												<li class="dropdown">
+													<a class="dropdown-toggle" href="#" id="navbarDropdown" 
+													role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{$sub->name}}
+													</a>
+													<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+													@foreach($subcategorieChild as $child)		
+														@if ( $child->id_subcategorie == $sub->id )
+															<li>
+																<a href="{{ route('pageproducts',[$child->id]) }}">{{$child->name}}
+																</a>
+															</li>
+														@endif		
+													@endforeach	
+													</ul>
+												</li>
+											@endif	
+										@endforeach	
+										</ul>	
 									</li>
-									</ul>
-								</li>
+								@endforeach
 								<li><a href="{{ route('BlogSite') }}">Blog</a></li>
                     			<li><a href="{{ route('contacto') }}">Contacto</a></li>
 							</ul>

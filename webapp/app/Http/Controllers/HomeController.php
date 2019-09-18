@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\Categorie;
 use App\SubCategorie;
+use App\SubCategorieChild;
 
 class HomeController extends Controller
 {
@@ -21,11 +22,12 @@ class HomeController extends Controller
         $products = Product::all();
         $categorie = Categorie::all(); 
         $subcategorie = SubCategorie::all(); 
+        $subcategorieChild = SubCategorieChild::all(); 
         $user = null;
         if(Auth::check()){
             $user = Auth::user();
         }        
-        return view('welcome', compact('products','categorie','subcategorie','user') );
+        return view('welcome', compact('products','categorie','subcategorie','user','subcategorieChild') );
     }
 
     /**

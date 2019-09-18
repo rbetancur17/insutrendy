@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Categorie;
 use App\SubCategorie;
+use App\SubCategorieChild;
 use Mail;
 
 
@@ -69,7 +70,8 @@ class CotizacionProducto extends Controller
         $prod = Product::find($id);
         $categorie = Categorie::all(); 
         $subcategorie = SubCategorie::all(); 
-        return view('cotizacion',compact('prod','categorie','subcategorie') );
+        $subcategorieChild = SubCategorieChild::all(); 
+        return view('cotizacion',compact('prod','categorie','subcategorie','subcategorieChild') );
     }
 
     /**
