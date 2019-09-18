@@ -109,15 +109,14 @@
 								<li><a href="{{ route('home') }}">Inicio</a></li>
 								@foreach($categorie as $categ)
 									<li class="dropdown">									
-										<a class="dropdown-toggle" 
-											href="#" id="navbarDropdown" role="button" data-toggle="dropdown" 
+										<a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" 
 											aria-haspopup="true" aria-expanded="false">{{$categ->name}}
 										</a>
 										<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 										@foreach($subcategorie as $sub)	
 											@if ( $sub->id_categorie == $categ->id )
 												<li class="dropdown">
-													<a class="dropdown-toggle" href="#" id="navbarDropdown" 
+													<a href="#" id="navbarDropdown" 
 													role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{$sub->name}}
 													</a>
 													<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
