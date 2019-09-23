@@ -25,15 +25,51 @@
                                 <input type="date" name="dateEntrace" id="" class="form-control">
                             </div>
                             <div class="form-group">
+                                <label for="">Introducción de la Entrada</label>
+                                <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
                                 <label for="">Contenido de la Entrada</label>
                                 <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
                             </div>
+                            <div class="form-group">
+                                <label for="">Publicar</label>
+                                <select name="" id="" class="form-control">
+                                    <option value="si">SI</option>
+                                    <option value="no">NO</option>
+                                </select>
+                            </div>
                             <div class="">
                                 <div class="">
-                                      <label class="bmd-label-floating">Imagen 1</label>
+                                      <label class="bmd-label-floating">Imagen Introducción</label>
                                       <input type="file" name="image" class="form-control">
                                     </div>
                             </div>
+                            <br>
+                            <div class="">
+                                <div class="">
+                                    <div class="col-sm-3">
+                                        <label class="bmd-label-floating">Imagen 01 Blog</label>  
+                                    </div>
+                                        <div class="col-sm-8"><input type="file" name="image01" class="form-control">
+                                    </div> 
+
+                                    <div class="col-sm-3">
+                                            <label class="bmd-label-floating">Imagen 02 Blog</label>  
+                                        </div>
+                                    <div class="col-sm-8">
+                                        <input type="file" name="image02" class="form-control">
+                                    </div> 
+
+                                    <div class="col-sm-3">
+                                            <label class="bmd-label-floating">Imagen 03 Blog</label>  
+                                        </div>
+                                    <div class="col-sm-8">
+                                        <input type="file" name="image03" class="form-control">
+                                    </div> 
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                     <button type="submit" class="btn btn-warning btn-sm btn-block">Guardar</button>
                                 </div>
