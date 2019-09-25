@@ -37,7 +37,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Publicar</label>
-                                <select name="" id="" class="form-control">
+                                <select name="publish" id="" class="form-control">
                                     <option value="si">SI</option>
                                     <option value="no">NO</option>
                                 </select>

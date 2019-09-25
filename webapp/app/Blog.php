@@ -13,8 +13,14 @@ class Blog extends Model
         'id',
         'title',
         'fecha',
+        'introduction',
         'content',
-        'image'
+        'image',
+        'image01',
+        'image02',
+        'image03',
+        'publish'
+
     ];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
