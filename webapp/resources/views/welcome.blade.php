@@ -4,7 +4,7 @@
 @section('content')
 <section class="hero-section">
 		<div class="hero-slider owl-carousel">
-			<div class="hs-item set-bg" data-setbg="{{ asset('img/slider/1.jpg') }}">
+			<div class="hs-item set-bg" data-setbg="{{ asset('img/slider/slider1.jpg') }}">
 				<div class="container">
 					<div class="row">
 						<div class="col-xl-6 col-lg-7 text-white">
@@ -16,7 +16,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="hs-item set-bg" data-setbg="{{ asset('img/slider/2.jpg') }}">
+			<div class="hs-item set-bg" data-setbg="{{ asset('img/slider/slider2.jpg') }}">
 				<div class="container">
 					<div class="row">
 						<div class="col-xl-6 col-lg-7 text-white">
@@ -27,7 +27,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="hs-item set-bg" data-setbg="{{ asset('img/slider/3.jpg') }}">
+			<div class="hs-item set-bg" data-setbg="{{ asset('img/slider/slider3.jpg') }}">
 				<div class="container">
 					<div class="row">
 						<div class="col-xl-6 col-lg-7 text-white">
