@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Categorie;
+use App\SubCategorieChild;
 use App\SubCategorie;
 use Illuminate\Http\Request;
 
@@ -18,8 +19,9 @@ class BlogPage extends Controller
     {
         $blogs = Blog::all();
         $categorie = Categorie::all();
-        $subcategorie = SubCategorie::all(); 
-        return view('blogSite', compact('blogs','categorie','subcategorie'));
+        $subcategorie = SubCategorie::all();
+        $subcategorieChild = SubCategorieChild::all();
+        return view('blogSite', compact('blogs','categorie','subcategorie','subcategorieChild'));
     }
 
     /**
