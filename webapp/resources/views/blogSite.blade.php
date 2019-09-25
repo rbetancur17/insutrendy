@@ -17,7 +17,7 @@
                 <div class="col-12 col-sm-12 col-md-9 col-xl-9">
                     <p class="alert alert-primary">Fecha: {{$blog->fecha}}</p>
                     <div class="alert alert-success" role="alert">
-                        <p>{{$blog->content}}</p>
+                        <p>{!! html_entity_decode(e($blog->content)) !!}</p>
                         <a href="">Ver más</a>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                 <div class="col-12 col-sm-12 col-md-9 col-xl-9">
                     <p class="alert alert-primary">Fecha: {{$blog->fecha}}</p>
                     <div class="alert alert-success" role="alert">
-                        <p>{{$blog->content}}</p>
+                        <p>{{$blog->introduction}}</p>
                         <a href="">Ver más</a>
                     </div>
                 </div>
