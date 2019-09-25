@@ -18,8 +18,6 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
-//Route::get('begin','Auth\LoginController@index')->name('logeo');
-//Route::post('login','Auth\LoginController@ingreso')->name('login');
 
 Route::get('auth/login', 'Auth\LoginController@ShowLogin')->name('Showlogin');
 Route::post('auth/login', 'Auth\LoginController@Login')->name('login');
@@ -72,6 +70,3 @@ Route::post('post','admin\BlogController@store')->name('newpost');
 Route::post('updateproduct/{id}','Admin\ProductController@update')->name('updateproduct');
 
 Route::post('subcategoriecreatechild','admin\SubCategoryChild@store')->name('subcategoriecreatechild');
-
-
-
