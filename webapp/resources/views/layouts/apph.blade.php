@@ -112,7 +112,7 @@
 								@foreach($categorie as $categ)
 									<li class="dropdown">									
 										<a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" 
-											aria-haspopup="true" aria-expanded="false">{{$categ->name}}
+											aria-haspopup="true" aria-expanded="false" style="text-transform: none">{{$categ->name}}
 										</a>
 										<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 										@foreach($subcategorie as $sub)	
