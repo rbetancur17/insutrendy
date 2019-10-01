@@ -18,13 +18,13 @@
                     <p class="alert alert-primary">Fecha: {{$blog->fecha}}</p>
                     <div class="alert alert-success" role="alert">
                         <p>{!! html_entity_decode(e($blog->content)) !!}</p>
-                        <a href="">Ver más</a>
+                        <a href="{{ route('detailBlog',['id'=>$blog->id]) }}">Ver más</a>
                     </div>
                 </div>
                 <hr>
                 <br><br>
             </div>     
-        @else
+        @elseif($blog->id % 2 == 0)
             <div class="row">
                 <div class="col-12-col-sm-12 col-xl-12">
                     <h4 class="alert alert-primary">{{$blog->title}}</h4>
@@ -33,7 +33,7 @@
                     <p class="alert alert-primary">Fecha: {{$blog->fecha}}</p>
                     <div class="alert alert-success" role="alert">
                         <p>{{$blog->introduction}}</p>
-                        <a href="">Ver más</a>
+                        <a href="{{ route('detailBlog',['id'=>$blog->id]) }}">Ver más</a>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-3 col-xl-3">

@@ -53,7 +53,12 @@ class BlogPage extends Controller
      */
     public function show($id)
     {
-        //
+        $blogd = Blog::find($id);
+        //dd($blogs);
+        $categorie = Categorie::all();
+        $subcategorie = SubCategorie::all();
+        $subcategorieChild = SubCategorieChild::all();
+        return view('blogdetails', compact('blogd','categorie','subcategorie','subcategorieChild'));
     }
 
     /**

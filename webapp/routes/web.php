@@ -39,6 +39,7 @@ Route::get('contact','Contacto@index')->name('contacto');
 
 Route::get('siteBlog','BlogPage@index')->name('BlogSite');
 
+Route::get('BlogDetail/{id}','BlogPage@show')->name('detailBlog');
 
 // admin
 Auth::routes();
