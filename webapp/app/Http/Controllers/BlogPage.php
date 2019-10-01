@@ -58,7 +58,8 @@ class BlogPage extends Controller
         $categorie = Categorie::all();
         $subcategorie = SubCategorie::all();
         $subcategorieChild = SubCategorieChild::all();
-        return view('blogdetails', compact('blogd','categorie','subcategorie','subcategorieChild'));
+        return view('blogdetails', compact('blogd','categorie','subcategorie','subcategorieChild'))
+        ->with('message', 'Post Almacenado');
     }
 
     /**

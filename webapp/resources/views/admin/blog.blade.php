@@ -9,6 +9,11 @@
 <br>   
     <div class="container">
         <div class="row">
+            @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
             <div class="col-12 col-sm-12 col-md-1 col-xl-1"></div>
             <div class="col-12 col-sm-12 col-md-10 col-xl-10">
                 <div class="card text-center">
