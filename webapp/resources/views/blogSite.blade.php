@@ -32,7 +32,7 @@
                 <div class="col-12 col-sm-12 col-md-9 col-xl-9">
                     <p class="alert alert-primary">Fecha: {{$blogx->fecha}}</p>
                     <div class="alert alert-success" role="alert">
-                        <p>{{$blogx->Introduction}}</p>
+                        <p>{!! html_entity_decode(e($blogx->Introduction)) !!}</p>
                         <a href="{{ route('detailBlog',['id'=>$blogx->id]) }}">Ver más</a>
                     </div>
                 </div>
