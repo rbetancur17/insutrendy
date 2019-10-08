@@ -17,11 +17,12 @@ class BlogPage extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
+        $blogd = Blog::all();
+        //dd($blogs);
         $categorie = Categorie::all();
         $subcategorie = SubCategorie::all();
         $subcategorieChild = SubCategorieChild::all();
-        return view('blogSite', compact('blogs','categorie','subcategorie','subcategorieChild'));
+        return view('blogSite', compact('blogd','categorie','subcategorie','subcategorieChild'));
     }
 
     /**
@@ -54,7 +55,6 @@ class BlogPage extends Controller
     public function show($id)
     {
         $blogd = Blog::find($id);
-        //dd($blogs);
         $categorie = Categorie::all();
         $subcategorie = SubCategorie::all();
         $subcategorieChild = SubCategorieChild::all();
