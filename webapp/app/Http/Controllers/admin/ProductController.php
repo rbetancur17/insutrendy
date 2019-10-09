@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Categorie;
 use App\Product;
+use App\SubCategorie;
 use App\SubCategorieChild;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
