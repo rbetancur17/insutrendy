@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Categorie;
 use App\SubCategorie;
+use App\SubCategorieChild;
 
 class Contacto extends Controller
 {
@@ -16,9 +17,10 @@ class Contacto extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        $categorie = Categorie::all(); 
-        $subcategorie = SubCategorie::all(); 
+        $products = Product::all()->where("status",1);
+        $categorie = Categorie::all()->where("status",1);
+        $subcategorie = SubCategorie::all()->where("status",1);
+        $subcategorieChild = SubCategorieChild::all()->where("status",1);
         return view('contacto', compact('products','categorie','subcategorie') );
     }
 

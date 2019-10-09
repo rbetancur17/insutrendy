@@ -73,6 +73,25 @@ class CategoryController extends Controller
         //
     }
 
+    public function active($id)
+    {
+        $categorie = Categorie::find($id);
+        $categorie->status = 1;
+        $categorie->save();
+        return redirect()->back()->with('message', 'Categoría Activada con exito');
+
+    }    
+
+    public function inacactive($id)
+    {
+        $categorie = Categorie::find($id);
+        $categorie->status = 2;
+        $categorie->save();
+        return redirect()->back()->with('message', 'Categoría Inactivada con exito');
+
+    }    
+
+
     /**
      * Update the specified resource in storage.
      *

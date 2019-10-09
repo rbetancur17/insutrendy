@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\SubCategorieChild;
 
 class ListSubChild extends Controller
 {
@@ -14,7 +15,8 @@ class ListSubChild extends Controller
      */
     public function index()
     {
-        return view('admin.listSubChild');
+        $subcategorie = SubCategorieChild::all();        
+        return view('admin.listSubChild', compact('subcategorie'));
     }
 
     /**

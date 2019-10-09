@@ -20,23 +20,36 @@
                                 <th>Codigo</th>
                                 <th>Descripcion</th>
                                 <th>Nombre</th>
-                                <th>Categoria</th>
                                 <th>Estado</th>
                                 <th colspan="2" class="text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($subcategorie as $subcategories) --}}
+                             @foreach ($subcategorie as $subcategories)
                             <tr>
-                              {{--  <td>{{$subcategories->code}}</td>
+                              <td>{{$subcategories->code}}</td>
                                 <td>{{$subcategories->description}}</td>
                                 <td>{{$subcategories->name}}</td>
-                                <td>{{$subcategories->id_categorie}}</td>
-                                <td>{{$subcategories->status}}</td>
-                                <td class="text-center"><a href="{{ route('DetailSubcategory', ['id'=>$subcategories->id_subcategorie]) }}" class="btn btn-info btn-sm center">Editar</a></td>
-                                <td class="text-center"><a href="" class="btn btn-danger btn-sm center">Desactivar</a></td> --}}
+                                <td>
+                                    @switch($subcategories->status)
+                                    @case(1)
+                                        Activo
+                                    @break;
+                                    @case(2)
+                                        Inactivo
+                                    @break;
+                                    @endswitch
+                                </td>
+                                <td class="text-center">
+                                    <a href="{{route('subcategorychildactive',$subcategories->id)}}"  
+                                        class="btn btn-info btn-sm center">Activar</a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="{{route('subcategorychildinacactive',$subcategories->id)}}"  
+                                        class="btn btn-danger btn-sm center">Desactivar</a>
+                                </td>
                             </tr>
-                            {{-- @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

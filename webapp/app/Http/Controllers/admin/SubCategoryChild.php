@@ -48,6 +48,25 @@ class SubCategoryChild extends Controller
         return redirect()->back()->with('message', 'SubCategoria Nivel 2 almacenada con éxito');
     }
 
+
+    public function active($id)
+    {
+        $categorie = SubCategorieChild::find($id);
+        $categorie->status = 1;
+        $categorie->save();
+        return redirect()->back()->with('message', 'SubCategoría Activada con exito');
+
+    }    
+
+    public function inacactive($id)
+    {
+        $categorie = SubCategorieChild::find($id);
+        $categorie->status = 2;
+        $categorie->save();
+        return redirect()->back()->with('message', 'SubCategoría Inactivada con exito');
+
+    }      
+
     /**
      * Display the specified resource.
      *

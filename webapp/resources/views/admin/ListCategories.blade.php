@@ -41,10 +41,16 @@
                                     @endswitch
                                 </td>
                                 <td 
-                                    class="text-center"><a href="" class="btn btn-info btn-sm center">Activar</a>
+                                    class="text-center">
+                                        <a href="{{route('categoryactive',$categories->id)}}" 
+                                            class="btn btn-info btn-sm center">Activar
+                                        </a>
                                 </td>    
                                 <td 
-                                    class="text-center"><a href="" class="btn btn-danger btn-sm center">Desactivar</a>
+                                    class="text-center">
+                                    <a href="{{route('categoryinacactive',$categories->id)}}"  
+                                        class="btn btn-danger btn-sm center">Desactivar
+                                    </a>
                                 </td>                                
                                 <td class="text-center">
                                     <a href="{{route('categoryshow',$categories->id)}}"

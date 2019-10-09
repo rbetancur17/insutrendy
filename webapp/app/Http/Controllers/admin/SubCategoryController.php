@@ -56,6 +56,25 @@ class SubCategoryController extends Controller
         return view('admin.listSubCategories', compact('subcategorie'));
     }
 
+
+    public function active($id)
+    {
+        $subcategory = SubCategorie::find($id);
+        $subcategory->status = 1;
+        $subcategory->save();
+        return redirect()->back()->with('message', 'SubCategoría Activada con exito');
+
+    }    
+
+    public function inacactive($id)
+    {
+        $subcategory = SubCategorie::find($id);
+        $subcategory->status = 2;
+        $subcategory->save();
+        return redirect()->back()->with('message', 'SubCategoría Inactivada con exito');
+
+    }       
+
     /**
      * Display the specified resource.
      *

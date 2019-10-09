@@ -58,6 +58,14 @@ Route::get('categorylist','admin\CategoryController@listCategory')->name('listca
 
 Route::get('categoryshow/{id}','admin\CategorieDetail@show')->name('categoryshow');
 Route::post('categoryedit','admin\CategorieDetail@store')->name('categoryedit');
+Route::get('categoryactive/{id}','admin\CategoryController@active')->name('categoryactive');
+Route::get('categoryinacactive/{id}','admin\CategoryController@inacactive')->name('categoryinacactive');
+
+Route::get('subcategoryactive/{id}','admin\SubCategoryController@active')->name('subcategoryactive');
+Route::get('subcategoryinacactive/{id}','admin\SubCategoryController@inacactive')->name('subcategoryinacactive');
+
+Route::get('subcategorychildactive/{id}','admin\SubCategoryChild@active')->name('subcategorychildactive');
+Route::get('subcategorychildinacactive/{id}','admin\SubCategoryChild@inacactive')->name('subcategorychildinacactive');
 
 
 Route::post('subcategoriecreate','admin\SubCategoryController@store')->name('subcategoriecreate');

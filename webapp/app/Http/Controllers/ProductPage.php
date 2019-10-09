@@ -18,9 +18,10 @@ class ProductPage extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        $categorie = Categorie::all(); 
-        $subcategorie = SubCategorie::all(); 
+        $products = Product::all()->where("status",1);
+        $categorie = Categorie::all()->where("status",1);
+        $subcategorie = SubCategorie::all()->where("status",1);
+        $subcategorieChild = SubCategorieChild::all()->where("status",1);
         return view('productPage',compact('products','categorie','subcategorie') );
     }
 

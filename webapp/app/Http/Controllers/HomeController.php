@@ -19,10 +19,10 @@ class HomeController extends Controller
     public function index()
     {
 
-        $products = Product::all();
-        $categorie = Categorie::all(); 
-        $subcategorie = SubCategorie::all(); 
-        $subcategorieChild = SubCategorieChild::all(); 
+        $products = Product::all()->where("status",1);
+        $categorie = Categorie::all()->where("status",1);
+        $subcategorie = SubCategorie::all()->where("status",1);
+        $subcategorieChild = SubCategorieChild::all()->where("status",1);
         $user = null;
         if(Auth::check()){
             $user = Auth::user();

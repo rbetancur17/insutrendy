@@ -32,9 +32,24 @@
                                 <td>{{$subcategories->description}}</td>
                                 <td>{{$subcategories->name}}</td>
                                 <td>{{$subcategories->id_categorie}}</td>
-                                <td>{{$subcategories->status}}</td>
-                                <td class="text-center"><a href="{{ route('DetailSubcategory', ['id'=>$subcategories->id_subcategorie]) }}" class="btn btn-info btn-sm center">Editar</a></td>
-                                <td class="text-center"><a href="" class="btn btn-danger btn-sm center">Desactivar</a></td>
+                                <td>
+                                    @switch($subcategories->status)
+                                    @case(1)
+                                        Activo
+                                    @break;
+                                    @case(2)
+                                        Inactivo
+                                    @break;
+                                    @endswitch
+                                </td>
+                                <td class="text-center">
+                                    <a href="{{route('subcategoryactive',$subcategories->id)}}"  
+                                        class="btn btn-info btn-sm center">Activar</a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="{{route('subcategoryinacactive',$subcategories->id)}}"  
+                                        class="btn btn-danger btn-sm center">Desactivar</a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

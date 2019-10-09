@@ -50,9 +50,9 @@ class DetalleProducto extends Controller
     public function show($id)
     {
         $prod = Product::find($id);
-        $categorie = Categorie::all(); 
-        $subcategorie = SubCategorie::all(); 
-        $subcategorieChild = SubCategorieChild::all(); 
+        $categorie = Categorie::all()->where("status",1);
+        $subcategorie = SubCategorie::all()->where("status",1);
+        $subcategorieChild = SubCategorieChild::all()->where("status",1);
         return view('detalleProducto',compact('prod','categorie','subcategorie','subcategorieChild') );
     }
 
