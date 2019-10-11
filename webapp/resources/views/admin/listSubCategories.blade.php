@@ -22,7 +22,7 @@
                                 <th>Nombre</th>
                                 <th>Categoria</th>
                                 <th>Estado</th>
-                                <th colspan="2" class="text-center">Acciones</th>
+                                <th colspan="3" class="text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,6 +49,9 @@
                                 <td class="text-center">
                                     <a href="{{route('subcategoryinacactive',$subcategories->id)}}"  
                                         class="btn btn-danger btn-sm center">Desactivar</a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="{{ route('DetailSubcategory', $subcategories->id) }}" class="btn btn-success btn-sm">Editar</a>
                                 </td>
                             </tr>
                             @endforeach

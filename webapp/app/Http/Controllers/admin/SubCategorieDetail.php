@@ -48,9 +48,9 @@ class SubCategorieDetail extends Controller
      */
     public function show($id)
     {
-        $category = Categorie::all();
-        $subcategorie = SubCategorie::where('id_subcategorie',$id)->get(); 
-        return view('admin.detailSubCategory',compact('subcategorie','category'));
+        // $category = Categorie::all();
+        // $subcategorie = SubCategorie::where('id_subcategorie',$id)->get(); 
+        return view('admin.detailSubCategory');
     }
 
     /**
