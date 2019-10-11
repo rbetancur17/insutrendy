@@ -21,7 +21,7 @@ class Contacto extends Controller
         $categorie = Categorie::all()->where("status",1);
         $subcategorie = SubCategorie::all()->where("status",1);
         $subcategorieChild = SubCategorieChild::all()->where("status",1);
-        return view('contacto', compact('products','categorie','subcategorie') );
+        return view('contacto', compact('products','categorie','subcategorie','subcategorieChild') );
     }
 
     /**
