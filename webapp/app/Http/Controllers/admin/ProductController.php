@@ -20,7 +20,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $subcategories = SubCategorieChild::all();
+        $subcategories = SubCategorieChild::all()->where("status",1);
         return view('admin.product', compact('subcategories') );
     }
 

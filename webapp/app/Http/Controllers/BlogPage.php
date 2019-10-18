@@ -57,9 +57,9 @@ class BlogPage extends Controller
     public function show($id)
     {
         $blogd = Blog::find($id);
-        $categorie = Categorie::all();
-        $subcategorie = SubCategorie::all();
-        $subcategorieChild = SubCategorieChild::all();
+        $categorie = Categorie::all()->where("status",1);
+        $subcategorie = SubCategorie::all()->where("status",1);
+        $subcategorieChild = SubCategorieChild::all()->where("status",1);
         return view('blogdetails', compact('blogd','categorie','subcategorie','subcategorieChild'))
         ->with('message', 'Post Almacenado');
     }

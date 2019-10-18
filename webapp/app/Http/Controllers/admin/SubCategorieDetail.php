@@ -37,7 +37,14 @@ class SubCategorieDetail extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id = $request->input('id_subcategorie');
+        $subcategorie = SubCategorie::find($id);
+        $subcategorie->code = $request->input('code');
+        $subcategorie->name = $request->input('name');
+        $subcategorie->id_categorie = $request->input('categorie_id');
+        $subcategorie->description = $request->input('description');
+        $subcategorie->save();
+        return redirect()->back()->with('message', 'SubCategoría actualizada con éxito');
     }
 
     /**
@@ -48,9 +55,9 @@ class SubCategorieDetail extends Controller
      */
     public function show($id)
     {
-        // $category = Categorie::all();
-        // $subcategorie = SubCategorie::where('id_subcategorie',$id)->get(); 
-        return view('admin.detailSubCategory');
+        $category = Categorie::all();
+        $subcategorie = SubCategorie::find($id); 
+        return view('admin.detailSubCategory',compact('category','subcategorie'));
     }
 
     /**

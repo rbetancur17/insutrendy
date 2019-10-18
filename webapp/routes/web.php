@@ -64,6 +64,8 @@ Route::get('categoryinacactive/{id}','admin\CategoryController@inacactive')->nam
 Route::get('subcategoryactive/{id}','admin\SubCategoryController@active')->name('subcategoryactive');
 Route::get('subcategoryinacactive/{id}','admin\SubCategoryController@inacactive')->name('subcategoryinacactive');
 
+Route::post('subcategoryedit','admin\SubCategorieDetail@store')->name('subcategoryedit');
+
 Route::get('subcategorychildactive/{id}','admin\SubCategoryChild@active')->name('subcategorychildactive');
 Route::get('subcategorychildinacactive/{id}','admin\SubCategoryChild@inacactive')->name('subcategorychildinacactive');
 

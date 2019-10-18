@@ -41,8 +41,8 @@ class CotizacionProducto extends Controller
     public function store(Request $request)
     {
         $prod = Product::find($request->input('id_product'));
-        $categorie = Categorie::all(); 
-        $subcategorie = SubCategorie::all(); 
+        $categorie = Categorie::all()->where("status",1);
+        $subcategorie = SubCategorie::all()->where("status",1);
         $nombreCliente = $request->input('nombre');
         $emailCliente = $request->input('email');
         $movilCliente = $request->input('movil');
