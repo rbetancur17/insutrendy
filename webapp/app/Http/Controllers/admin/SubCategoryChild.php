@@ -75,7 +75,9 @@ class SubCategoryChild extends Controller
      */
     public function show($id)
     {
-        //
+        $category = SubCategorie::all();
+        $subcategorie = SubCategorieChild::find($id); 
+        return view('admin.detailSubCategoryChild',compact('category','subcategorie'));
     }
 
     /**

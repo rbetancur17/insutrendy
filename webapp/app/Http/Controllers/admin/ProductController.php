@@ -174,4 +174,23 @@ class ProductController extends Controller
     }
 
 
+    public function active($id)
+    {
+        $product = Product::find($id);
+        $product->status = 1;
+        $product->save();
+        return redirect()->back()->with('message', 'Producto Activada con exito');
+
+    }    
+
+    public function inacactive($id)
+    {
+        $product = Product::find($id);
+        $product->status = 2;
+        $product->save();
+        return redirect()->back()->with('message', 'Producto Activada con exito');
+    }    
+
+
+
 }

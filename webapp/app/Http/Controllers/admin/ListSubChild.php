@@ -37,7 +37,14 @@ class ListSubChild extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id = $request->input('id_subcategorie');
+        $subcategorie = SubCategorieChild::find($id);
+        $subcategorie->code = $request->input('code');
+        $subcategorie->name = $request->input('name');
+        $subcategorie->id_subcategorie = $request->input('subcategorie_id');
+        $subcategorie->description = $request->input('description');
+        $subcategorie->save();
+        return redirect()->back()->with('message', 'SubCategoría actualizada con éxito');
     }
 
     /**

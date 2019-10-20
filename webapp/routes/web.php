@@ -81,3 +81,11 @@ Route::post('post','admin\BlogController@store')->name('newpost');
 Route::post('updateproduct/{id}','Admin\ProductController@update')->name('updateproduct');
 
 Route::post('subcategoriecreatechild','admin\SubCategoryChild@store')->name('subcategoriecreatechild');
+
+Route::get('subcategorydetailchild/{idsubcategory}','admin\SubCategoryChild@show')->name('subcategorydetailchild');
+
+Route::post('subcategorydetailedit','admin\ListSubChild@store')->name('subcategorydetailedit');
+
+
+Route::get('productactive/{id}','admin\ProductController@active')->name('productactive');
+Route::get('productinacactive/{id}','admin\ProductController@inacactive')->name('productinacactive');
