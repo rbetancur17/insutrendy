@@ -19,7 +19,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $products = Product::all()->where("status",1);
+        $products = Product::all()->where("status",1)->take(12);
         $categorie = Categorie::all()->where("status",1);
         $subcategorie = SubCategorie::all()->where("status",1);
         $subcategorieChild = SubCategorieChild::all()->where("status",1);
