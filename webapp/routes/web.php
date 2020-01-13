@@ -69,13 +69,12 @@ Route::post('subcategoryedit','admin\SubCategorieDetail@store')->name('subcatego
 Route::get('subcategorychildactive/{id}','admin\SubCategoryChild@active')->name('subcategorychildactive');
 Route::get('subcategorychildinacactive/{id}','admin\SubCategoryChild@inacactive')->name('subcategorychildinacactive');
 
-
 Route::post('subcategoriecreate','admin\SubCategoryController@store')->name('subcategoriecreate');
 Route::get('subcategorylist','admin\SubCategoryController@listSubCategory')->name('listsubCategorie');
 Route::get('subcategoryDetail/{idsubcategory}','admin\SubCategorieDetail@show')->name('DetailSubcategory');
 Route::post('productcreate','admin\ProductController@store')->name('productcreate');
 Route::get('list','admin\ProductController@list')->name('lista');
-Route::get('edit/{id}','admin\ProductController@edit')->name('editar');
+
 Route::get('blog','admin\BlogController@index')->name('NewBlog');
 Route::post('post','admin\BlogController@store')->name('newpost');
 Route::post('updateproduct/{id}','Admin\ProductController@update')->name('updateproduct');
@@ -89,3 +88,5 @@ Route::post('subcategorydetailedit','admin\ListSubChild@store')->name('subcatego
 
 Route::get('productactive/{id}','admin\ProductController@active')->name('productactive');
 Route::get('productinacactive/{id}','admin\ProductController@inacactive')->name('productinacactive');
+Route::get('productshow/{id}','admin\ProductController@show')->name('productshow');
+Route::post('update/{id}','admin\ProductController@update')->name('update');

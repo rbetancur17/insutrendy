@@ -119,7 +119,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::find($id); 
+        $subcategoriesChild = SubCategorieChild::all();
+        return view('admin.productDetail',compact('product','subcategoriesChild'));
     }
 
     public function list(){
@@ -138,8 +140,13 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-        $subcategories = SubCategorie::all();
-        return view('admin.detalleProduct',compact('product','subcategories'));
+        $product->code = $request->input('code');
+        $product->name = $request->input('name');
+        $product->price = $request->input('price');
+        $product->id_subcategorie_child = $request->input('subcategorie_child_id');
+        $product->description = $request->input('description');
+        $product->save();
+        return redirect()->back()->with('message', 'Producto almacenada con éxito');
     }
 
     /**
@@ -155,7 +162,7 @@ class ProductController extends Controller
         $product->code = $request->input('code');
         $product->name = $request->input('name');
         $product->price = $request->input('price');
-        $product->id_subcategorie = $request->input('subcategorie_id');
+        $product->id_subcategorie_child = $request->input('subcategorie_child_id');
         $product->description = $request->input('description');
         $product->save();
         return redirect()->back()->with('message', 'Producto almacenada con éxito');

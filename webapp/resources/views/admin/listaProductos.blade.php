@@ -28,6 +28,7 @@
                                 <th>Imagen4</th>
                                 <th>Activar</th>
                                 <th>Desactivar</th>
+                                <th>Editar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,7 +63,12 @@
                                     <a href="{{route('productinacactive',$product->id)}}"  
                                         class="btn btn-danger btn-sm center">Desactivar
                                     </a>
-                                </td>                                
+                                </td>
+                                <td class="text-center">
+                                    <a href="{{route('productshow',$product->id)}}"
+                                        class="btn btn-info btn-sm center">Editar</a>
+                                    </a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
